@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Nomade. Social & Run Club.</title>
+  <meta name="description" content="Nomade · Social & Run Club. Run, pilates y after frente al mar en La Manga. Come for the movement, stay for the people." />
+  <meta property="og:title" content="Nomade · Social & Run Club." />
+  <meta property="og:description" content="Run, pilates y sunsets en La Manga. Únete a la comunidad y reserva tu plaza." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nomadesocial.club/" />
+  <meta property="og:image" content="https://nomadesocial.club/assets/ig-sunset.webp" />
+  <style>
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 1000; font-display: swap; src: url("assets/fonts/dmsans-normal-latin.woff2") format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300 1000; font-display: swap; src: url("assets/fonts/dmsans-normal-latinext.woff2") format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+    @font-face { font-family: 'DM Sans'; font-style: italic; font-weight: 300 1000; font-display: swap; src: url("assets/fonts/dmsans-italic-latin.woff2") format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'DM Sans'; font-style: italic; font-weight: 300 1000; font-display: swap; src: url("assets/fonts/dmsans-italic-latinext.woff2") format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500 700; font-display: swap; src: url("assets/fonts/spacegrotesk-latin.woff2") format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500 700; font-display: swap; src: url("assets/fonts/spacegrotesk-latinext.woff2") format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+  </style>
+  <link rel="icon" href="assets/favicon/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.webp" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+  <script>
+  /* ============================================================
+     ⚙️ CONFIG SEMANAL — lo ÚNICO que se toca cada semana.
+     Cambias estos valores, despliegas, y la bio de IG no se toca.
+     ============================================================ */
+  const NOMADE = {
+    whatsapp: "https://chat.whatsapp.com/IrW0JdrYz2ADeNtEUiyEoP",
+    strava: "https://strava.app.link/fzr22jJaH3b",
+    spotify: "https://open.spotify.com/playlist/10WzrzHqTgAU86h8OjUXph",
+    instagram: "https://instagram.com/socialclub.nomade",
+    logo: "assets/logo_nomade_web.webp",                // ⬅️ logo navbar (PNG naranja, fondo quitado y recortado ajustado)
+    email: "socialclub.nomade@gmail.com",               // email de contacto
+    telefono: "+34 659 61 51 36",
+    whatsappYoli: "https://wa.me/34659615136",         // WhatsApp directo a Yoli (dudas / colaboraciones)
+    stats: { nomaders: "+400", asistencias: "+500", eventos: "15", mujeres: "~70%", followersIg: "+2,6K", whatsapp: "+459" },
+
+    /* 🃏 TARJETAS DE EVENTO — tres barajas: base / running / pilates.
+       La PRIMERA tarjeta de cada lista es la que se ve al entrar; detrás quedan
+       las anteriores con su sello SOLD OUT, navegables con las flechas (o swipe).
+       Para publicar un evento nuevo: añade su tarjeta AL PRINCIPIO de su lista.
+       Campos: estado "abierta" | "proximamente" | "soldout" | "cerrada"
+               ("cerrada" = evento celebrado o inscripción cerrada SIN llenarse.
+                Pinta banda "INSCRIPCIÓN CERRADA" en vez de "SOLD OUT")
+               fechaTitulo · meta (subtítulo) · detalles [[etiqueta, valor], ...]
+               sello (texto bajo el SOLD OUT) · fotos (link Drive) · nota
+               formUrl + fechaISO ("2026-08-08T09:00:00") solo si estado "abierta"
+               (fechaISO enciende la cuenta atrás). */
+    tarjetas: {
+      base: [
+        /* 🎧 19.09 · Nomade x AURA en Todo Passa (Murcia). Abierta el 30 ago con el form de Yoli.
+           OJO: el 19.09.2026 es SÁBADO, no viernes (estaba mal desde que se anuncio).
+           Ultimo despliegue de Carlos: a partir de aqui las tarjetas las llevan Yoli y Miriam. */
+        { estado: "abierta", fechaTitulo: "Sábado 19.09",
+          meta: "Nomade x AURA · Run & Pilates & Brunch & DJ & Coffee Party. Welcome to the Morning Club: una mañana entera de movimiento y música en Murcia.",
+          detalles: [["Hora", "10:00"], ["Lugar", "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Todo+Passa+360+Club+Calle+Madre+Esperanza+5+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Todo Passa 360 Club</a> · C/ Madre Esperanza 5, Murcia"], ["Runners", "15€ · carrera con breathwork"], ["Movers", "30€ · Pilates Sculpt, plazas muy limitadas"], ["Incluye", "Brunch completo, after con Coffee y sorteos 🧡"], ["Dress code", "Negro"], ["Trae", "Toalla y botella de agua si haces pilates"]],
+          formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSflP8Rom4E_UHxb6d6iMDSzEfF7VCTAvFLkbWXsMYLuQ7Th9w/viewform",
+          fechaISO: "2026-09-19T10:00:00",
+          nota: "Al reservar eliges equipo: Runners o Movers 🧡" },
+        { estado: "proximamente", fechaTitulo: "Próximamente",
+          meta: "El próximo evento Nomade se anuncia primero en el grupo de WhatsApp.",
+          detalles: [["Formato", "Running + pilates + social after"], ["Dónde", "Frente al mar, en un rincón nuevo"]],
+          nota: "Únete al grupo y entérate antes que nadie 🧡" },
+        { estado: "soldout", sello: "75 nomaders", fechaTitulo: "Sábado 18.07",
+          meta: "Vol. 3 · The Morning Move. Run al amanecer, Pilates Sculpt y after frente al mar en Collados Beach.",
+          detalles: [["Lugar", "<a href=\"https://www.google.com/maps/place/Collados+Beach/@37.780153,-0.7489934,810m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd631a9a2bb0e273:0x21a76e3dfb7ed5bf!8m2!3d37.7801488!4d-0.7464131!16s%2Fg%2F1tdxm6cs\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Collados Beach</a>"], ["Formato", "Run 5K o Pilates Sculpt + brunch"]],
+          fotos: "https://drive.google.com/drive/folders/1TOoolRkSOuUXdrUJ_61NeoMNM5PNXKNT?usp=drive_link" },
+        { estado: "soldout", sello: "~60 nomaders", fechaTitulo: "Sábado 04.07",
+          meta: "Vol. 2 · Run & Pilates & DJ. 6K al atardecer, Pilates Sculpt sold out y after con DJ.",
+          detalles: [["Lugar", "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Dominique</a>"]] },
+        { estado: "soldout", sello: "~60 nomaders", fechaTitulo: "Sábado 20.06",
+          meta: "Vol. 1 · Lanzamiento. El primero. Donde empezó todo 🧡",
+          detalles: [["Lugar", "<a href=\"https://www.google.com/maps/place/La+Mestiza/@37.6637729,-0.7360469,811m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6637687!4d-0.7334666!16s%2Fg%2F11mhhhjhsk\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Mestiza</a>"]] }
+      ],
+      running: [
+        /* 🏃 06.09 · Nomade x NOW Running en Pickles Bar, Cabo de Palos. Abierta el 31 ago
+           con el copy y el formulario de Yoli. Es el primer evento con NOW, de Cartagena. */
+        { estado: "abierta", fechaTitulo: "Domingo 06.09",
+          meta: "Nomade x NOW Running. 5 km por Cabo de Palos y, a la vuelta, brunch y DJ set. La primera vez que corremos con el club de Cartagena.",
+          detalles: [["Hora", "8:30 recepción · 9:00 salida"], ["Lugar", "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Pickles+Bar+Cabo+de+Palos+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Pickles Bar</a> · Cabo de Palos"], ["Entrada", "15€"], ["Recorrido", "5K"], ["Incluye", "Brunch con café, tostada y fruta, DJ set, sorteos y sorpresas 🧡"], ["Dress code", "Negro"], ["Trae", "Toalla y bañador si te apetece un baño al acabar"]],
+          formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfFWLqoTefG4i__nUueHOf0Qtyue7ww7Wk0jCYpKh-htt9BxQ/viewform",
+          fechaISO: "2026-09-06T08:30:00",
+          nota: "Lo hacemos con NOW Running, de Cartagena 🧡" },
+        /* 🌅 SOCIAL RUN & SUNSET 25.08 — evento conjunto con Barré Murcia. Form y ubicacion los pasa Carlos (13 ago). */
+        { estado: "soldout", sello: "70 personas", fechaTitulo: "Martes 25.08",
+          meta: "Social Run &amp; Sunset. Lo hacemos con Barré Murcia: 5 km al atardecer en dos grupos y after en Maloca.",
+          detalles: [["Hora", "20:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/i4YkU6gETgDTPJe67\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Iglesia Salvator Mundi</a> · punto de encuentro"], ["Entrada", "10\u20ac \u00b7 con consumici\u00f3n en el after"], ["Recorrido", "5K en dos grupos"], ["Ritmos", "Iniciaci\u00f3n 6:00-7:00 \u00b7 pros 5:00"], ["Despu\u00e9s", "After en Maloca \ud83e\udde1"], ["Dress code", "Negro"]],
+          fotos: "https://drive.google.com/drive/folders/1Qf6IYi_mh0Lc08-dwHLyvDsiXdZdudg8?usp=sharing",
+          nota: "Agotado. Evento conjunto de Nomade y Barré Murcia \ud83e\udde1" },
+        /* 🌙 NIGHT RUN 18.08 — Cabo de Palos. Datos tomados del propio formulario (13 ago). */
+        { estado: "cerrada", sello: "m\u00e1s de 30 nomaders", fechaTitulo: "Martes 18.08",
+          meta: "Night Run en Cabo de Palos. Running nocturno con la comunidad y after en La Cangreja.",
+          detalles: [["Hora", "21:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/h7acttU61MD5pVFo8\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Cangreja Km 0</a>"], ["Entrada", "8\u20ac \u00b7 con consumici\u00f3n"], ["Recorrido", "7K para todos los niveles"], ["Ritmos", "Iniciaci\u00f3n 6:30-7:30 \u00b7 social 5:30-6:00"], ["Despu\u00e9s", "Consumici\u00f3n, sorteos y sorpresas \ud83e\udde1"], ["Dress code", "Negro"], ["Trae", "Ba\u00f1ador y toalla si te apetece"]],
+          fotos: "https://drive.google.com/drive/folders/1eWGBZdc72J2VUzbtMyUX3lppS7gD4WMQ?usp=sharing" },
+        /* 🌑 ECLIPSE 12.08 — form conectado el 5 ago (Drive: FORMULARIO 12-08, carpeta 12-08).
+           Ritmos tomados del propio formulario, que es lo que lee quien se inscribe. */
+        { estado: "soldout", sello: "30 runners + after agotado", fechaTitulo: "Miércoles 12.08",
+          meta: "Eclipse Running. El sol se pone eclipsado sobre el Mar Menor con un 98% tapado: lo vemos juntos con gafas homologadas y, cuando se va, salimos a correr.",
+          detalles: [["Hora", "19:30 · el eclipse empieza a las 19:41"], ["Lugar", "<a href=\"https://maps.app.goo.gl/1ToNE8y7nFEqnGME8\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">El Paquebote</a> · en la arena"], ["Entrada", "10€ · gafas + carrera + consumición"], ["Máximo", "20:35, con el 98% del sol tapado"], ["Recorrido", "5K u 8K"], ["Ritmos", "Iniciación 6:30-7:00 · intermedio 5:30-6:00 · 8K 5:30-6:00"], ["Después", "After en la playa con baño, picoteo y música 🧡"], ["Trae", "Bañador y toalla"], ["Solo after", "6€ · sin correr: gafas, bebidas, sorteos y baño de noche"]],
+          fotos: "https://drive.google.com/drive/folders/1B_syu_SYv8LfeATtMdLLeP_HudL4aMvq?usp=sharing",
+          nota: "Inscripciones cerradas: running y entrada de solo after, las dos agotadas. El próximo se anuncia primero en el grupo de WhatsApp 🧡" },
+        { estado: "cerrada", sello: "20 nomaders", fechaTitulo: "Martes 04.08",
+          meta: "Night Run en La Dominique. Running todos los martes, cada semana en una ubicación: la próxima se anuncia aquí y en Instagram.",
+          detalles: [["Hora", "21:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Dominique</a> · km 9"], ["Entrada", "7€ · con consumición"], ["Recorrido", "5K u 8K"], ["Ritmos", "Iniciación · intermedio · tirada larga"], ["Después", "Nos quedamos en La Dominique 🧡"]],
+          fotos: "https://drive.google.com/drive/folders/1vCEQyIEEhR-12EqfgYCH-Cy0VFjgH5Z0" },
+        { estado: "soldout", sello: "listas cerradas", fechaTitulo: "Miércoles 29.07",
+          meta: "Night Run. Running nocturno con after y cena en la Cangreja para quien se quedó.",
+          detalles: [["Hora", "21:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/h7acttU61MD5pVFo8\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Cangreja Km 0</a>"], ["Entrada", "7€ · con bebida"], ["Recorrido", "5K o 8K"], ["Dress code", "Negro"]],
+          fotos: "https://drive.google.com/drive/folders/1zXj9VVl4BeN8lpkKp60PVqAodcVuz5_Z?usp=sharing" }
+      ],
+      pilates: [
+        /* 🏨 CETINA 29.08 — Pilates Sculpt Exclusive en el rooftop. Info y form de Yoli (13 ago). */
+        { estado: "soldout", sello: "20 personas", fechaTitulo: "S\u00e1bado 29.08",
+          meta: "Pilates Sculpt Exclusive by Nomade en el rooftop de Cetina Hotels, Cabo de Palos. La edici\u00f3n m\u00e1s especial de la temporada.",
+          detalles: [["Hora", "8:30 a 11:00"], ["Lugar", "Cetina Hotels \u00b7 Cabo de Palos, en el rooftop"], ["Entrada", "35\u20ac nomaders \u00b7 40\u20ac general"], ["Clase", "Pilates Sculpt + meditaci\u00f3n guiada con breathwork"], ["Despu\u00e9s", "Desayuno buffet del hotel, todas juntas \ud83e\udde1"], ["Adem\u00e1s", "Sorteos y regalos para todas"], ["Dress code", "Negro"], ["Trae", "Toalla y botella de agua"]],
+          fotos: "https://drive.google.com/drive/folders/1WzzTjSDPRnxS5u6kkeCafdxbizhYGkH2?usp=sharing",
+          nota: "\u00daltimo evento de la temporada. Rooftop lleno y desayuno hasta las 12 \ud83e\udde1" },
+        /* 💅 27.08 — Barre & Breakfast & Skincare. Formato distinto al Morning Pilates: lo pidio Yoli el 19 ago. */
+        { estado: "cerrada", sello: "16 nomaders", fechaTitulo: "Jueves 27.08",
+          meta: "Barr\u00e9 &amp; Breakfast &amp; Skincare en La Dominique. Una edici\u00f3n distinta a la de cada jueves: barra, desayuno y un rato de skincare.",
+          detalles: [["Hora", "9:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Dominique</a>"], ["Entrada", "27\u20ac \u00b7 22\u20ac si ya has venido a un Pilates Sculpt"], ["Clase", "Barr\u00e9"], ["Despu\u00e9s", "Desayuno y skincare \ud83e\udde1"], ["Dress code", "Negro"], ["Trae", "Toalla y agua"]],
+          fotos: "https://drive.google.com/drive/folders/1ziyivT_hPfcUqwqSaRQYd5ac19YAYqvD?usp=sharing",
+          nota: "\u00daltimo jueves de agosto. En septiembre volvemos \ud83e\udde1" },
+        /* 🧘 PILATES 20.08 — form conectado el 13 ago. Cada jueves: cuando se agote, pasa a "soldout" y entra delante el siguiente. */
+        { estado: "cerrada", fechaTitulo: "Jueves 20.08",
+          meta: "Morning Pilates en La Dominique, todos los jueves: Pilates Sculpt frente al mar y desayuno mediterr\u00e1neo despu\u00e9s.",
+          detalles: [["Hora", "9:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Dominique</a>"], ["Entrada", "20\u20ac \u00b7 clase + desayuno + seguro"], ["Clase", "1h de Pilates Sculpt + breathwork"], ["Despu\u00e9s", "Desayuno mediterr\u00e1neo \ud83e\udde1"], ["Dress code", "Negro"]],
+          fotos: "https://drive.google.com/drive/folders/17YZdcq5Oi_dn1SMYT-wkatLVRM6nBaHM?usp=sharing",
+          nota: "El siguiente jueves es el Barr\u00e9 &amp; Breakfast &amp; Skincare del 27 \ud83e\udde1" },
+        /* 🧘 PILATES 13.08 — form conectado el 5 ago (Drive: FORMULARIO 13-08).
+           Cada jueves: cuando el de esta semana se agote, se pasa a "soldout" y se
+           añade DELANTE la tarjeta del jueves siguiente con su propio formUrl. */
+        { estado: "soldout", sello: "plazas agotadas", fechaTitulo: "Jueves 13.08",
+          meta: "Morning Pilates en La Dominique, todos los jueves: Pilates Sculpt frente al mar y desayuno mediterráneo después.",
+          detalles: [["Hora", "9:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Dominique</a>"], ["Entrada", "20€ · clase + desayuno + seguro"], ["Clase", "1h de Pilates Sculpt + breathwork"], ["Después", "Desayuno mediterráneo 🧡"], ["Dress code", "Negro"]],
+          fotos: "https://drive.google.com/drive/folders/1iV93T1SM-fLx_nGah8wPEvFAw0K6zFey?usp=sharing",
+          nota: "Agotado. El jueves 20 ya está abierto 🧡" },
+        { estado: "soldout", sello: "plazas agotadas", fechaTitulo: "Jueves 06.08",
+          meta: "Morning Pilates en La Dominique, ahora todos los jueves: Pilates Sculpt frente al mar y desayuno mediterráneo después.",
+          detalles: [["Hora", "9:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Dominique</a>"], ["Entrada", "20€ · clase + desayuno + seguro"], ["Clase", "1h de Pilates Sculpt + breathwork"], ["Después", "Desayuno mediterráneo 🧡"]],
+          fotos: "https://drive.google.com/drive/folders/1ULT9m0E3tTOxIMZwnF_ReiarCb1uEJ9H",
+          nota: "Agotado. El jueves 13 ya está abierto 🧡" },
+        { estado: "soldout", sello: "25 plazas agotadas", fechaTitulo: "Sábado 01.08",
+          fotos: "https://drive.google.com/drive/folders/1XTzy37SGcuXh0KFCskKCXSTuj9IDra_R?usp=sharing",
+          meta: "Morning Pilates. Pilates Sculpt frente al mar y desayuno mediterráneo en La Dominique.",
+          detalles: [["Hora", "9:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Dominique</a>"], ["Entrada", "20€ · clase + desayuno + seguro"], ["Clase", "1h de Pilates Sculpt + breathwork"], ["Después", "Desayuno mediterráneo a las 10:30 🧡"], ["Dress code", "Negro"]] }
+      ]
+    },
+
+    /* 📆 ARCHIVO DE EVENTOS — el diario del club.
+       Después de cada evento se añade/completa su entrada.
+       Campos vacíos ("") no se muestran en el popup. */
+    eventos: [
+      {
+        fecha: "20.06",
+        titulo: "Vol. 1 · Lanzamiento",
+        lugar: "La Mestiza",
+        asistentes: "alrededor de 60 nomaders",
+        resumen: "El primero. Donde empezó todo 🧡",
+        fotos: "",  // link WeTransfer del 20/06 caducado — poner link permanente cuando lo haya
+        rutaStrava: "",
+        sorteos: ["Glow Shots by Salubell"]
+      },
+      {
+        fecha: "04.07",
+        titulo: "Vol. 2 · Run & Pilates & DJ",
+        lugar: "La Dominique Coffee & Bakery",
+        asistentes: "~60 nomaders",
+        resumen: "6K al atardecer, Pilates Sculpt sold out y after con DJ.",
+        fotos: "https://we.tl/t-d12HTji6ExBRac8o",  // ⚠️ WeTransfer caduca (~7 días) — mover a Drive/permanente
+        rutaStrava: "",
+        sorteos: ["Glow Shots by Salubell", "Wellness Drink by Drink Lares"]
+      },
+      {
+        fecha: "11.07",
+        titulo: "Nomade Meets · Mini Run Dominique + Calistenia",
+        lugar: "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">Dominique</a>",
+        asistentes: "",
+        resumen: "20:45 Dominique Mini Run 3K hasta <a href=\"https://maps.app.goo.gl/1ToNE8y7nFEqnGME8\" target=\"_blank\" rel=\"noopener\" style=\"font-weight:700;text-decoration:underline\">Paquebote</a>.<br>Calistenia con sunset 🌅<br>Gratis<br><br>Entrena a tu ritmo, sin exigencias, es una tarde para disfrutar. 🧡",
+        fotos: "",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}
+      },
+      {
+        fecha: "18.07",
+        titulo: "Vol. 3 · The Morning Move",
+        lugar: "Collados",
+        asistentes: "75 nomaders",
+        resumen: "Run al amanecer, Pilates Sculpt y after frente al mar. La tercera edición de la comunidad Nomade.",
+        fotos: "https://drive.google.com/drive/folders/1TOoolRkSOuUXdrUJ_61NeoMNM5PNXKNT?usp=drive_link",
+        rutaStrava: "",
+        sorteos: ["Glow Shots by Salubell", "Wellness Drink by Drink Lares", "Queso 7 by Obrador de Queso", "Nomade Free Pass"],
+        cta: {}
+      },
+      {
+        fecha: "24.07",
+        titulo: "Nomade Meets · Functional training",
+        lugar: "<a href=\"https://maps.app.goo.gl/RYQA4B6jtnvaoY2L6\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">Polideportivo La Manga</a>",
+        asistentes: "",
+        resumen: "Ven caminando por la playa a inaugurar el nuevo parque de calistenia del polideportivo a las 20:30. Movilidad + Fuerza + Equilibrio. Iniciación a la disciplina y/o entrenamiento libre. Buenas vibes 🤙🏼",
+        fotos: "",
+        rutaStrava: "",
+        sorteos: [],
+        cta: { texto: '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-3px;margin-right:6px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.26.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23M8.53 7.33c-.16 0-.43.06-.66.31s-.86.85-.86 2.07.88 2.4 1 2.57 1.75 2.78 4.35 3.9c.61.26 1.08.42 1.45.54.61.19 1.17.16 1.6.1.49-.07 1.5-.61 1.71-1.2s.21-1.09.15-1.2-.23-.16-.48-.29-1.5-.74-1.74-.82-.4-.13-.58.13-.68.82-.83 1-.31.2-.56.07a7.1 7.1 0 0 1-2.09-1.29 7.8 7.8 0 0 1-1.45-1.8c-.15-.26-.02-.4.11-.53.12-.12.26-.31.4-.47s.18-.26.27-.44.05-.33-.02-.46-.58-1.42-.81-1.94-.44-.44-.6-.45z"/></svg>Unirme', url: "https://chat.whatsapp.com/IrW0JdrYz2ADeNtEUiyEoP" }
+      },
+      {
+        fecha: "29.07",
+        titulo: "Night Run · La Cangreja",
+        lugar: "<a href=\"https://maps.app.goo.gl/h7acttU61MD5pVFo8\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">La Cangreja Km 0</a>",
+        asistentes: "",
+        resumen: "Running nocturno, 5K o 8K, con after y cena en la Cangreja para quien se quede. Entrada 7€ con bebida.",
+        fotos: "https://drive.google.com/drive/folders/1zXj9VVl4BeN8lpkKp60PVqAodcVuz5_Z?usp=sharing",  // Drive permanente, no caduca
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // evento ya pasado y cerrado — antes tenía cta "Unirme" → #event, quedó obsoleto (fix 02 ago)
+      },
+      {
+        fecha: "04.08",
+        titulo: "Night Run · La Dominique",
+        lugar: "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">La Dominique</a> · km 9",
+        asistentes: "",
+        resumen: "21:00 · running nocturno 5K u 8K con grupos de ritmo (iniciación, intermedio y tirada larga). 7€ con consumición, y después nos quedamos en La Dominique. Ahora hay running todos los martes, cada semana en una ubicación.",
+        fotos: "https://drive.google.com/drive/folders/1vCEQyIEEhR-12EqfgYCH-Cy0VFjgH5Z0",  // Drive permanente, público
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // evento ya celebrado — antes tenía cta "Apúntate" → #event, quedó obsoleto (fix 05 ago)
+      },
+      {
+        fecha: "06.08",
+        titulo: "Morning Pilates · La Dominique",
+        lugar: "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">La Dominique</a>",
+        asistentes: "",
+        resumen: "9:00 · Pilates Sculpt frente al mar y desayuno mediterráneo. Ahora todos los jueves. 25 plazas, agotadas.",
+        fotos: "https://drive.google.com/drive/folders/1ULT9m0E3tTOxIMZwnF_ReiarCb1uEJ9H",  // Drive permanente, público
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // agotado: no se puede apuntar nadie, así que sin botón (mismo criterio que 29.07 y 01.08)
+      },
+      {
+        fecha: "01.08",
+        titulo: "Morning Pilates · La Dominique",
+        lugar: "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">La Dominique</a>",
+        asistentes: "",
+        resumen: "9:00 · una hora de Pilates Sculpt con breathwork frente al mar y desayuno mediterráneo después. Dress code: negro. 20€ con seguro incluido. 25 plazas, agotadas.",
+        fotos: "https://drive.google.com/drive/folders/1XTzy37SGcuXh0KFCskKCXSTuj9IDra_R?usp=sharing",  // Drive permanente
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // evento ya pasado y agotado — antes tenía cta "Reservar plaza" → #event, quedó obsoleto (fix 02 ago)
+      },
+      {
+        fecha: "12.08",
+        titulo: "Eclipse Running · El Paquebote",
+        lugar: "<a href=\"https://maps.app.goo.gl/1ToNE8y7nFEqnGME8\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">El Paquebote</a> · en la arena",
+        asistentes: "30 nomaders",
+        resumen: "19:30 · el sol se pone eclipsado sobre el Mar Menor con un 98% tapado. Lo vemos juntos con gafas homologadas incluidas (máximo a las 20:35) y, cuando se va, salimos a correr: 5K de iniciación (6:30-7:00), 5K intermedio (5:30-6:00) u 8K de tirada larga (5:30-6:00), los tres con pacer. Después, after en la playa con baño, picoteo y música. La entrada son 10€ e incluye gafas, carrera y consumición. Trae bañador y toalla. Las 30 plazas de running se agotaron y se abrió además una entrada de solo after de 6€ para quien no corría, que también se cerró.",
+        fotos: "https://drive.google.com/drive/folders/1B_syu_SYv8LfeATtMdLLeP_HudL4aMvq?usp=sharing",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // agotado del todo el 11 ago (running 30 + after): sin botón, mismo criterio que 29.07 y 01.08
+      },
+      {
+        fecha: "13.08",
+        titulo: "Morning Pilates · La Dominique",
+        lugar: "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">La Dominique</a>",
+        asistentes: "",
+        resumen: "9:00 · una hora de Pilates Sculpt con breathwork frente al mar y desayuno mediterráneo después. Dress code: negro. 20€ con seguro incluido. 25 plazas, agotadas.",
+        fotos: "https://drive.google.com/drive/folders/1iV93T1SM-fLx_nGah8wPEvFAw0K6zFey?usp=sharing",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // formulario cerrado el 11 ago, plazas agotadas: sin botón (mismo criterio que 06.08 y 01.08)
+      },
+      {
+        fecha: "18.08",
+        titulo: "Night Run \u00b7 Cabo de Palos",
+        lugar: "<a href=\"https://maps.app.goo.gl/h7acttU61MD5pVFo8\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">La Cangreja Km 0</a>",
+        asistentes: "m\u00e1s de 30 nomaders",
+        resumen: "21:00 \u00b7 running nocturno de 7 km para todos los niveles, en dos grupos: iniciaci\u00f3n a 6:30-7:30 y social a 5:30-6:00. 8\u20ac con una consumici\u00f3n en La Cangreja, sorteos y sorpresas. Dress code negro; trae ba\u00f1ador y toalla si te apetece.",
+        fotos: "https://drive.google.com/drive/folders/1eWGBZdc72J2VUzbtMyUX3lppS7gD4WMQ?usp=sharing",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // evento celebrado el 18 ago
+      },
+      {
+        fecha: "20.08",
+        titulo: "Morning Pilates · La Dominique",
+        lugar: "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">La Dominique</a>",
+        asistentes: "",
+        resumen: "9:00 · Pilates Sculpt frente al mar y desayuno mediterráneo. Dress code: negro. 20€ con seguro incluido. 25 plazas.",
+        fotos: "https://drive.google.com/drive/folders/17YZdcq5Oi_dn1SMYT-wkatLVRM6nBaHM?usp=sharing",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // evento celebrado el 20 ago
+      },
+      {
+        fecha: "25.08",
+        titulo: "Social Run & Sunset \u00b7 Nomade x Barré Murcia",
+        lugar: "<a href=\"https://maps.app.goo.gl/i4YkU6gETgDTPJe67\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">Iglesia Salvator Mundi</a> \u00b7 punto de encuentro",
+        asistentes: "70 personas, entre Nomade y Barré Murcia",
+        resumen: "20:00 \u00b7 5 km al atardecer en dos grupos: iniciaci\u00f3n a 6-7 min/km y pros a 5 min/km. Lo organizamos con Barré Murcia. After en Maloca con una consumici\u00f3n incluida. Dress code negro. 10\u20ac.",
+        fotos: "https://drive.google.com/drive/folders/1Qf6IYi_mh0Lc08-dwHLyvDsiXdZdudg8?usp=sharing",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // sold out (21 ago)
+      },
+      {
+        fecha: "27.08",
+        titulo: "Barr\u00e9 &amp; Breakfast &amp; Skincare \u00b7 La Dominique",
+        lugar: "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">La Dominique</a>",
+        asistentes: "16 nomaders",
+        resumen: "9:00 \u00b7 una edici\u00f3n distinta a la de cada jueves: clase de barr\u00e9, desayuno y un rato de skincare. Dress code negro; trae toalla y agua. 27\u20ac, y 22\u20ac si ya has venido a alg\u00fan Pilates Sculpt de los jueves.",
+        fotos: "https://drive.google.com/drive/folders/1ziyivT_hPfcUqwqSaRQYd5ac19YAYqvD?usp=sharing",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // evento celebrado el 27 ago
+      },
+      {
+        fecha: "29.08",
+        titulo: "Pilates Sculpt Exclusive \u00b7 Cetina Hotels",
+        lugar: "Cetina Hotels \u00b7 Cabo de Palos, en el rooftop",
+        asistentes: "20 personas",
+        resumen: "8:30 a 11:00 \u00b7 Pilates Sculpt en el rooftop con meditaci\u00f3n guiada y breathwork, y despu\u00e9s desayuno buffet del hotel con mesas reservadas para el grupo. Sorteos y regalos para todas. 35\u20ac nomaders y 40\u20ac precio general. Aforo completo: 22 plazas agotadas. Dress code negro; trae toalla y botella de agua.",
+        fotos: "https://drive.google.com/drive/folders/1WzzTjSDPRnxS5u6kkeCafdxbizhYGkH2?usp=sharing",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}  // sold out (26 ago)
+      },
+      {
+        fecha: "06.09",
+        titulo: "Nomade x NOW Running · 5 km, brunch y DJ set",
+        lugar: "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Pickles+Bar+Cabo+de+Palos+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">Pickles Bar</a> · Cabo de Palos",
+        asistentes: "",
+        resumen: "8:30 recepción y 9:00 salida · 5 km por Cabo de Palos con NOW Running, el club de Cartagena, y a la vuelta brunch con café, tostada y fruta, DJ set, sorteos y sorpresas. Dress code negro. 15€. Trae toalla y bañador si te apetece un baño al acabar.",
+        fotos: "",
+        rutaStrava: "",
+        sorteos: [],
+        cta: { texto: "Reserva tu plaza", url: "https://docs.google.com/forms/d/e/1FAIpQLSfFWLqoTefG4i__nUueHOf0Qtyue7ww7Wk0jCYpKh-htt9BxQ/viewform" }
+      },
+      {
+        fecha: "19.09",
+        titulo: "Nomade x AURA · Run & Pilates & Brunch & Coffee Party",
+        lugar: "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Todo+Passa+360+Club+Calle+Madre+Esperanza+5+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Todo Passa 360 Club</a> · C/ Madre Esperanza 5, Murcia",
+        asistentes: "",
+        resumen: "10:00 · la primera vez que juntamos las dos tribus en una sola cita. Runners a 15€ y Movers de Pilates Sculpt a 30€, con plazas muy limitadas. Las dos entradas incluyen la sesión con breathwork, brunch completo, after con Coffee y sorteos. Dress code negro; si haces pilates trae toalla y agua.",
+        fotos: "",
+        rutaStrava: "",
+        sorteos: [],
+        cta: { texto: "Reserva tu plaza", url: "https://docs.google.com/forms/d/e/1FAIpQLSflP8Rom4E_UHxb6d6iMDSzEfF7VCTAvFLkbWXsMYLuQ7Th9w/viewform" }
+      }
+    ],
+    proximos: ["06.09", "19.09"]   // días con glow "Próximo 🧡"
+  };
+  </script>
+  <style>
+    :root {
+      --sand: #e9d3b2;
+      --sun: #d98a3d;
+      --clay: #b85f32;
+      --terra: #7d3822;
+      --soil: #21150f;
+      --ink: #110d09;
+      --cream: #fff4df;
+      --muted: rgba(255, 244, 223, .72);
+      --line: rgba(255, 244, 223, .18);
+      --glass: rgba(17, 13, 9, .58);
+      --max: 1180px;
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      /* 🏜️ fondo de arena: grano fino + relieve de duna + calor, todo SVG inline */
+      background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.55' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)' opacity='.075'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 900 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='d'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.005 .009' numOctaves='3' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23d)' opacity='.14'/%3E%3C/svg%3E"),
+        radial-gradient(125% 85% at 50% -12%, #2f2318 0%, rgba(47,35,24,0) 58%),
+        radial-gradient(110% 65% at 100% 102%, #281d14 0%, rgba(40,29,20,0) 55%),
+        radial-gradient(90% 55% at 0% 40%, #221a12 0%, rgba(34,26,18,0) 60%),
+        var(--ink);
+      background-size: 170px 170px, cover, cover, cover, cover, auto;
+      background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+      background-attachment: fixed, fixed, fixed, fixed, fixed, fixed;
+      color: var(--cream);
+      font-family: "DM Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    /* 🏜️ TEXTURA DE ARENA — 3 capas, todo CSS+SVG inline (cero peticiones externas).
+       Para quitarla: borra .grain/.sand/.dunes y sus divs en el <body>. */
+    .grain {                    /* grano fino, el film grain de siempre */
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .055;
+      z-index: 52;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+    }
+
+    .nav {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(calc(100% - 28px), var(--max));
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px 10px 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 999px;
+      background: rgba(18, 12, 8, .62);
+      backdrop-filter: blur(18px) saturate(150%);
+      box-shadow: 0 20px 60px rgba(0,0,0,.28);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+    .mark {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sun), var(--clay));
+      color: #fff;
+      font-weight: 1000;
+    }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      color: rgba(255,255,255,.76);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .nav-links a { padding: 9px 12px; border-radius: 999px; }
+    .nav-cta {
+      background: var(--cream);
+      color: var(--ink) !important;
+    }
+    .nav-burger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 42px; height: 38px; padding: 9px 10px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 999px; cursor: pointer; }
+    .nav-social { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; margin-right: 12px; }
+    .nav-ig, .nav-wa, .nav-tk { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); color: #fff; text-decoration: none; transition: background .2s ease, border-color .2s ease; }
+    .nav-burger span { display: block; height: 2px; width: 100%; background: var(--cream); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+    .nav.open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav.open .nav-burger span:nth-child(2) { opacity: 0; }
+    .nav.open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #000;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,.08) 35%, rgba(17,13,9,.98) 100%),
+        linear-gradient(90deg, rgba(17,13,9,.96) 0%, rgba(17,13,9,.44) 44%, rgba(17,13,9,.08) 100%),
+        url("assets/ig-sunset.webp") center bottom/cover;
+      transform: scale(1.035);
+      animation: slowZoom 18s ease-in-out infinite alternate;
+    }
+    @keyframes slowZoom { from { transform: scale(1.02); } to { transform: scale(1.09); } }
+    .hero-inner {
+      position: relative;
+      width: min(calc(100% - 36px), var(--max));
+      margin: 0 auto;
+      padding: 120px 0 42px;
+      display: grid;
+      gap: 22px;
+    }
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 244, 223, .08);
+      color: rgba(255,255,255,.82);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: #ffb86b; box-shadow: 0 0 24px #ffb86b; }
+    h1 {
+      margin: 0;
+      max-width: 960px;
+      font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+      font-size: clamp(58px, 13vw, 152px);
+      line-height: .88;
+      font-weight: 800;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+    .hero-copy {
+      max-width: 650px;
+      color: rgba(255,244,223,.82);
+      font-size: clamp(18px, 2.4vw, 25px);
+      line-height: 1.28;
+      letter-spacing: -.02em;
+      font-weight: 520;
+    }
+    #rot { color: var(--sun); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; justify-content: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 14px;
+      letter-spacing: -.01em;
+      transition: transform .2s var(--ease-out), background .25s var(--ease-out), color .25s var(--ease-out), box-shadow .25s var(--ease-out);
+    }
+    .btn:active { transform: scale(.97); transition: transform 120ms var(--ease-out); }
+    .btn.primary { background: var(--cream); color: var(--ink); }
+    .btn.secondary { border: 1px solid var(--line); color: var(--cream); background: rgba(255,255,255,.08); backdrop-filter: blur(12px); }
+    .scroll-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+    .scroll-line { height: 1px; width: 70px; background: rgba(255,255,255,.3); }
+
+    .section { position: relative; padding: 78px 0; }
+    .container { width: min(calc(100% - 36px), var(--max)); margin: 0 auto; }
+    .section-kicker {
+      color: var(--sun);
+      font-size: 12px;
+      font-weight: 1000;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      margin: 0;
+      font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+      font-size: clamp(38px, 6.5vw, 82px);
+      line-height: .88;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .section-text {
+      max-width: 670px;
+      color: rgba(255,244,223,.72);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.55;
+      margin: 22px 0 0;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .image-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: 34px;
+      overflow: hidden;
+      background: #1c120d;
+      box-shadow: 0 35px 90px rgba(0,0,0,.32);
+    }
+    .image-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.68)), var(--img) center/cover;
+      transition: transform .6s ease;
+    }
+    .image-card:hover::before { transform: scale(1.04); }
+    .image-card .label {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-end;
+      padding-top: 160px;
+      color: white;
+    }
+    .label strong { font-size: 24px; letter-spacing: -.03em; }
+    .label span { font-size: 12px; text-transform: uppercase; letter-spacing: .16em; color: rgba(255,255,255,.7); font-weight: 900; }
+
+    .quote-panel {
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 34px;
+      border-radius: 34px;
+      border: 1px solid rgba(255,244,223,.16);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(217,138,61,.22), transparent 35%),
+        linear-gradient(145deg, rgba(255,244,223,.08), rgba(255,244,223,.03));
+    }
+    .big-quote {
+      font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+      font-size: clamp(48px, 7vw, 96px);
+      line-height: .88;
+      text-transform: uppercase;
+      letter-spacing: -.035em;
+      margin: 0;
+    }
+    .mini-copy { color: rgba(255,244,223,.72); line-height: 1.55; font-size: 17px; max-width: 470px; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .feature {
+      min-height: 230px;
+      border-radius: 26px;
+      padding: 24px;
+      background: rgba(255,244,223,.07);
+      border: 1px solid rgba(255,244,223,.12);
+    }
+    .feature .num { font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif; font-size: 60px; line-height: .8; color: rgba(217,138,61,.92); }
+    .feature h3 { margin: 24px 0 8px; font-size: 22px; letter-spacing: -.03em; }
+    .feature p { margin: 0; color: rgba(255,244,223,.65); line-height: 1.45; }
+
+    .event {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      border-radius: 36px;
+      background: var(--cream);
+      color: var(--soil);
+      min-height: 480px;
+      display: grid;
+      grid-template-columns: 1fr;
+      box-shadow: 0 40px 100px rgba(0,0,0,.35);
+    }
+    .event-photo { position: relative; z-index: 1; }
+    .event-copy { padding: clamp(22px, 4vw, 44px); display: flex; flex-direction: column; justify-content: space-between; background: url("assets/event-nightrun-bg.webp") center/cover; }
+    /* Cartel del próximo evento: respaldado, tapado con blur + mensaje */
+    .event-copy--blurred { position: relative; }
+    .event-copy--blurred > *:not(.event-copy-overlay) { filter: blur(7px); pointer-events: none; user-select: none; opacity: .55; }
+    .event-copy-overlay {
+      position: absolute; inset: 0; z-index: 5;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 24px; gap: 16px;
+      background: rgba(255,244,223,.30); border-radius: 22px;
+      backdrop-filter: blur(1px);
+    }
+    .event-copy-overlay p {
+      margin: 0; max-width: 360px; color: var(--soil);
+      font-size: clamp(17px, 2.4vw, 21px); font-weight: 700; line-height: 1.35;
+    }
+    .event h2 {
+      font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+      font-size: clamp(38px, 5.5vw, 68px);
+      line-height: .92;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+      margin: 10px 0 0;
+      font-weight: 400;
+    }
+    .event-meta { margin-top: 20px; color: rgba(33,21,15,.68); font-size: 18px; line-height: 1.45; max-width: 430px; }
+    .load-box { margin-top: 34px; }
+    .load-row { display: flex; justify-content: space-between; align-items: center; font-weight: 1000; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+    .bar { height: 12px; background: rgba(33,21,15,.12); border-radius: 999px; margin-top: 12px; overflow: hidden; }
+    .bar span { display: block; height: 100%; width: 68%; border-radius: 999px; background: linear-gradient(90deg, var(--terra), var(--sun)); position: relative; }
+    .bar span::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); animation: shimmer 2.5s infinite; }
+    @keyframes shimmer { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+    .event-photo { min-height: 320px; background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.46)), url("assets/ig_pillometry.webp") center 25%/cover; }
+    /* pestañas RUNNING / MOVERS */
+    .ev-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+    .ev-tab { flex: 1; min-width: 0; padding: 13px 10px; border-radius: 14px; border: 1.5px solid rgba(33,21,15,.2);
+      background: rgba(255,244,223,.55); color: rgba(33,21,15,.55); font-family: inherit;
+      font-weight: 800; letter-spacing: .14em; text-transform: uppercase; font-size: 12px;
+      cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+    .ev-tab:hover { border-color: rgba(33,21,15,.4); }
+    .ev-tab.is-active { background: var(--soil); color: var(--cream); border-color: var(--soil); }
+    .ev-panel[hidden] { display: none; }
+    .btn.is-disabled { opacity: .55; cursor: not-allowed; pointer-events: none; }
+    .soldout-band.soon { background: var(--soil); font-size: clamp(22px, 6.2vw, 44px); letter-spacing: .12em; }
+
+    /* sello SOLD OUT cruzado sobre la tarjeta */
+    .soldout-wrap { position: relative; }
+    .soldout-wrap .soldout-inner { opacity: .5; filter: saturate(.6); pointer-events: none; }
+    .soldout-band { position: absolute; top: 33%; left: -8%; width: 116%;
+      transform: translateY(-50%) rotate(-4deg); background: var(--terra); color: var(--cream);
+      text-align: center; font-weight: 900; letter-spacing: .16em; line-height: 1;
+      font-size: clamp(30px, 8.5vw, 62px); padding: 14px 0 16px; z-index: 3;
+      box-shadow: 0 14px 34px rgba(0,0,0,.28); }
+    .soldout-sub { display: block; font-size: 11px; letter-spacing: .22em; font-weight: 800;
+      opacity: .85; margin-top: 8px; }
+    /* Sello en flujo, no superpuesto: la tarjeta cambia de alto según su contenido
+       y un sello absoluto acababa tapando la fecha o el precio. Mismo lenguaje
+       visual (banda terracota inclinada) sin colisionar. Lo usan las tarjetas pasadas. */
+    .soldout-band.inflow { position: static; transform: rotate(-2.5deg); left: auto; width: auto;
+      font-size: clamp(26px, 7.2vw, 50px); padding: 12px 0 14px;
+      /* se come el padding de .event-copy + 18px de holgura para que la inclinación
+         no deje esquinas al aire. .event recorta el sobrante (overflow:hidden). */
+      margin: 16px calc(-1 * clamp(22px, 4vw, 44px) - 18px) 22px; }
+
+    /* celdas de semanal "próximamente": presentes pero atenuadas */
+    .cal-cell.soon-week { opacity: .62; }
+
+    /* 🃏 navegación de la baraja: flechas a los LADOS de la tarjeta (+ swipe en móvil),
+       contador discreto debajo */
+    .ev-arrow { position: absolute; z-index: 3; top: calc(var(--cromo-h, 540px) / 2 - 21px);
+      width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid rgba(33,21,15,.22);
+      background: rgba(255,250,240,.92); color: var(--soil); font-size: 22px; line-height: 1; font-weight: 800;
+      box-shadow: 0 8px 20px rgba(33,21,15,.22); cursor: pointer;
+      transition: background .2s, border-color .2s, opacity .2s; }
+    .ev-arrow[hidden] { display: none; }
+    /* centradas sobre el borde de la carta, mitad fuera (el padding del panel las absorbe) */
+    #ev-prev { left: calc(50% - min(100%, 480px) / 2 - 21px); }
+    #ev-next { right: calc(50% - min(100%, 480px) / 2 - 21px); }
+    .ev-arrow:hover { border-color: var(--soil); background: var(--cream); }
+    .ev-arrow:disabled { opacity: .25; cursor: default; }
+    .ev-count { display: block; text-align: center; margin-top: 14px; font-size: 12px; font-weight: 800;
+      letter-spacing: .14em; color: rgba(33,21,15,.55); font-variant-numeric: tabular-nums; }
+    .ev-count[hidden] { display: none; }
+
+    /* 🃏 el cromo: escenario con perspectiva, tamaño fijo (lo fija JS midiendo la
+       tarjeta más alta de TODAS las barajas → ninguna cambia de alto al navegar),
+       giro 3D al cambiar de carta y tilt al mover el ratón. Detrás asoman dos
+       cartas fantasma, como una baraja. */
+    .ev-stage { position: relative; perspective: 1400px; display: flex; justify-content: center; min-width: 0; }
+    /* la tarjeta de evento vive en una celda de grid: sin esto, el contenido
+       puede empujar la celda más allá del panel y el overflow la recorta */
+    .event-copy { min-width: 0; }
+    .ev-card { min-width: 0; }
+    .ev-ghost { position: absolute; top: 0; left: 50%; width: min(100%, 480px); height: var(--cromo-h, 100%);
+      border-radius: 26px; background: rgba(33,21,15,.07); border: 1px solid rgba(33,21,15,.07); display: none; }
+    .ev-stage.has-deck .ev-ghost { display: block; }
+    .ev-ghost.g1 { transform: translateX(-50%) rotate(-2.4deg) translateY(11px); }
+    .ev-ghost.g2 { transform: translateX(-50%) rotate(1.6deg) translateY(5px); }
+    .ev-card { position: relative; z-index: 1; width: min(100%, 480px); transform-style: preserve-3d;
+      transition: transform .24s var(--ease-out), opacity .24s var(--ease-out); }
+    .ev-card.no-t { transition: none !important; }
+    .ev-card.out-l, .ev-card.in-l { transform: translateX(-54px) rotateY(34deg) scale(.9); opacity: 0; }
+    .ev-card.out-r, .ev-card.in-r { transform: translateX(54px) rotateY(-34deg) scale(.9); opacity: 0; }
+    .cromo { min-height: var(--cromo-h, 540px); display: flex; flex-direction: column; position: relative; overflow: hidden;
+      background: linear-gradient(168deg, #fffaf0 0%, #fbf0da 55%, #f3e3c4 100%);
+      border: 1px solid rgba(33,21,15,.15); border-radius: 26px; padding: 22px;
+      box-shadow: 0 20px 48px rgba(33,21,15,.18), inset 0 1px 0 rgba(255,255,255,.65);
+      transition: transform .18s ease; will-change: transform; }
+    .cromo::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+      background: linear-gradient(118deg, transparent 40%, rgba(255,255,255,.2) 50%, transparent 60%);
+      /* el reflejo sigue al ratón (lo mueve el JS con --shine-x). Va aquí y no en .cromo
+         porque ::after no recibe eventos: mover esto no puede romper ningún click. */
+      transform: translateX(var(--shine-x, 0px)); transition: transform .18s ease; }
+    .cromo h2 { font-size: clamp(28px, 4.4vw, 40px); margin: 6px 0 0; }
+    .cromo .event-meta { margin-top: 12px; font-size: 16px; }
+    .cromo .detail-rows { margin-top: 16px; }
+    .cromo .detail-row { padding: 10px 0; }
+    /* 🔧 19 ago · la banda se salia por arriba y dejaba las esquinas al aire al estar
+       inclinada. Se le da holgura de sobra a los lados y .cromo (overflow:hidden) recorta. */
+    .cromo .soldout-band.inflow { margin: 10px -46px 14px; font-size: clamp(24px, 6vw, 38px);
+      padding: 10px 0 12px; white-space: nowrap; }
+    .cromo .soldout-band.inflow.larga { font-size: clamp(17px, 4.2vw, 26px); letter-spacing: .04em; }
+    .cromo-body { margin: auto 0; }  /* centra el contenido cuando la carta va holgada */
+    .cromo .hero-actions { margin-top: auto; padding-top: 16px; }
+    @media (prefers-reduced-motion: reduce) {
+      .ev-card { transition: opacity .2s linear !important; }
+      .ev-card.out-l, .ev-card.in-l, .ev-card.out-r, .ev-card.in-r { transform: none; }
+      .cromo { transition: none !important; }
+    }
+
+    .detail-rows { margin-top: 30px; }
+    .detail-row {
+      display: flex; justify-content: space-between; align-items: center; gap: 14px;
+      padding: 11px 0; border-bottom: 1px solid rgba(33,21,15,.12);
+      font-size: 12px; font-weight: 1000; text-transform: uppercase; letter-spacing: .08em;
+    }
+    .detail-row span { color: rgba(33,21,15,.6); }
+    .detail-row strong { text-align: right; }
+    .detail-row strong.sold { color: var(--terra); }
+    .event-fine { margin-top: 16px; font-size: 13px; color: rgba(33,21,15,.55); line-height: 1.45; }
+
+    /* Diario del club → ver estilos .cal (calendario) más abajo */
+
+    .modal-back {
+      position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 20px;
+      background: rgba(10, 7, 5, .68); backdrop-filter: blur(10px);
+      opacity: 0; pointer-events: none; transition: opacity .25s var(--ease-out);
+    }
+    .modal-back.open { opacity: 1; pointer-events: auto; }
+    .modal {
+      width: min(440px, 100%); border-radius: 28px; padding: 30px;
+      background: var(--cream); color: var(--soil);
+      box-shadow: 0 40px 100px rgba(0,0,0,.5); position: relative;
+      transform: translateY(14px) scale(.97); transition: transform .25s var(--ease-out);
+    }
+    .modal-back.open .modal { transform: none; }
+    .modal-x {
+      position: absolute; top: 16px; right: 16px; width: 34px; height: 34px;
+      border: none; border-radius: 50%; background: rgba(33,21,15,.08); color: var(--soil);
+      font-size: 18px; cursor: pointer; line-height: 1;
+    }
+    .modal .m-kicker { color: var(--terra); font-size: 11px; font-weight: 1000; letter-spacing: .18em; text-transform: uppercase; }
+    .modal h3 {
+      font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+      font-size: clamp(30px, 6vw, 40px); line-height: .92; letter-spacing: -.03em;
+      text-transform: uppercase; font-weight: 400; margin: 8px 0 4px;
+    }
+    .modal .m-resumen { color: rgba(33,21,15,.66); font-size: 15px; line-height: 1.5; margin: 8px 0 0; }
+    .modal .detail-rows { margin-top: 18px; }
+    .modal .m-sorteos { margin: 14px 0 0; padding: 0; list-style: none; font-size: 13px; color: rgba(33,21,15,.7); }
+    .modal .m-sorteos li { padding: 5px 0; }
+    .modal .m-sorteos li.colab { color: rgba(33,21,15,.6); font-style: italic; }
+    .modal .hero-actions { margin-top: 22px; }
+    .modal .btn { min-height: 44px; font-size: 13px; }
+    .modal .btn.primary { background: var(--soil); color: var(--cream); }
+    .modal .btn.secondary { border-color: rgba(33,21,15,.2); color: var(--soil); background: rgba(33,21,15,.05); }
+
+    .wa-block {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 22px;
+      align-items: center;
+      margin-top: 30px;
+    }
+    .phone {
+      width: min(340px, 100%);
+      margin: 0 auto;
+      border: 12px solid #080604;
+      border-radius: 42px;
+      background: #f5efe4;
+      color: #111;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+      overflow: hidden;
+    }
+    .phone-top { padding: 16px; background: #1f7a4f; color: white; font-weight: 900; display: flex; align-items: center; gap: 10px; }
+    .avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, var(--sun), var(--terra)); }
+    .messages { padding: 18px; display: grid; gap: 10px; min-height: 360px; background: #ede3d4; }
+    .msg { width: fit-content; max-width: 86%; padding: 10px 12px; border-radius: 16px; background: white; font-size: 13px; line-height: 1.35; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .msg.me { margin-left: auto; background: #d8f7c2; }
+    .mock-label { color: rgba(255,244,223,.58); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; margin-top: 12px; }
+
+    .final {
+      min-height: 82svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(17,13,9,.1), var(--ink) 92%),
+        url("assets/ig_community.webp") center/cover;
+    }
+    .final h2 {
+      margin: 0 auto;
+      max-width: 980px;
+      font-family: "Space Grotesk", "DM Sans", system-ui, sans-serif;
+      font-size: clamp(50px, 10vw, 128px);
+      line-height: .9;
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .final p { color: rgba(255,244,223,.76); font-size: 19px; max-width: 560px; margin: 24px auto 0; line-height: 1.45; }
+
+    footer { padding: 28px 0 42px; border-top: 1px solid rgba(255,244,223,.12); color: rgba(255,244,223,.56); }
+    .footer-row { width: min(calc(100% - 36px), var(--max)); margin: 0 auto; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: 13px; }
+
+    /* Equipo */
+    .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+    .person { display: flex; gap: 18px; align-items: center; padding: 18px; border-radius: 26px; background: rgba(255,244,223,.06); border: 1px solid rgba(255,244,223,.12); transition: transform .25s ease, border-color .25s ease; }
+    .person .pfp { width: 92px; height: 92px; border-radius: 20px; object-fit: cover; flex: none; background: #2a1a12; }
+    .person .pfp-mono { display: grid; place-items: center; background: linear-gradient(135deg, var(--sun), var(--clay)); color: #fff; font-family: "Space Grotesk", "DM Sans", sans-serif; font-size: 38px; font-weight: 700; letter-spacing: -.02em; }
+    .person h3 { margin: 0 0 2px; font-size: 21px; letter-spacing: -.02em; }
+    .person .handle { color: var(--sun); font-size: 13px; font-weight: 800; }
+    .person p { margin: 8px 0 0; color: rgba(255,244,223,.66); font-size: 14px; line-height: 1.45; }
+
+    /* Stats + partners */
+    .stats-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    .stat { flex: 1 1 140px; padding: 22px; border-radius: 22px; background: rgba(255,244,223,.06); border: 1px solid rgba(255,244,223,.12); }
+    .stat-num { font-family: "Space Grotesk", "DM Sans", sans-serif; font-size: 46px; line-height: .9; color: var(--sun); }
+    .stat-label { margin-top: 8px; font-size: 12px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,244,223,.6); }
+    .partners { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+    .partners .plabel { color: rgba(255,244,223,.5); font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; width: 100%; }
+    .partners span:not(.plabel) { color: rgba(255,244,223,.82); font-weight: 800; font-size: 17px; }
+
+    /* FAQ */
+    .faq { margin-top: 30px; display: grid; gap: 10px; max-width: 820px; }
+    .faq details { border: 1px solid rgba(255,244,223,.14); border-radius: 18px; background: rgba(255,244,223,.05); padding: 2px 18px; }
+    .faq summary { cursor: pointer; list-style: none; padding: 16px 0; font-weight: 800; font-size: 17px; letter-spacing: -.01em; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; color: var(--sun); font-weight: 900; font-size: 22px; }
+    .faq details[open] summary::after { content: "\2013"; }
+    .faq details p { margin: 0 0 16px; color: rgba(255,244,223,.68); line-height: 1.5; font-size: 15px; }
+
+    /* Contacto */
+    .contact-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .benefits { margin: 14px 0 0; padding: 0; list-style: none; font-size: 14px; color: rgba(33,21,15,.72); }
+    .benefits li { position: relative; padding: 7px 0 7px 24px; line-height: 1.4; }
+    .benefits li::before { content: "\2713"; position: absolute; left: 0; color: var(--terra); font-weight: 900; }
+
+    /* Logo navbar */
+    .brand-logo { height: 32px; width: auto; display: block; }
+
+    /* Diario · calendario */
+    .cal { margin-top: 30px; max-width: 640px; border: 1px solid rgba(255,244,223,.14); border-radius: 26px; padding: 22px; background: rgba(255,244,223,.05); }
+    .cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .cal-title { font-family: "Space Grotesk", "DM Sans", sans-serif; font-size: 21px; font-weight: 700; letter-spacing: -.02em; text-transform: uppercase; }
+    .cal-nav { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,244,223,.2); background: rgba(255,244,223,.06); color: var(--cream); font-size: 20px; cursor: pointer; line-height: 1; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .cal-wd { text-align: center; font-size: 11px; font-weight: 900; letter-spacing: .1em; color: rgba(255,244,223,.5); padding: 6px 0; }
+    .cal-cell { position: relative; min-height: 60px; border-radius: 12px; padding: 8px; background: rgba(255,244,223,.03); border: 1px solid transparent; transition: transform .2s ease, border-color .2s ease; }
+    .cal-cell.empty { background: transparent; }
+    .cal-daynum { font-size: 13px; font-weight: 700; color: rgba(255,244,223,.55); }
+    .cal-cell.has-ev { cursor: pointer; background: rgba(217,138,61,.16); border-color: rgba(217,138,61,.4); }
+    .cal-cell.has-ev .cal-daynum { color: var(--cream); }
+    .cal-cell.next { background: rgba(217,138,61,.26); border-color: var(--sun); box-shadow: 0 0 24px rgba(217,138,61,.16); }
+    .cal-ev { display: block; margin-top: 6px; font-size: 10px; font-weight: 800; line-height: 1.15; color: var(--sun); text-transform: uppercase; letter-spacing: .02em; }
+
+    @media (hover: hover) and (pointer: fine) {
+      .nav-links a:hover { background: rgba(255,255,255,.1); color: #fff; }
+      .nav-ig:hover, .nav-wa:hover, .nav-tk:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.5); }
+      .btn:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(255,138,61,.32); }
+      .btn.primary:hover { background: var(--sun); color: var(--soil); }
+      .btn.secondary:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.45); }
+      .person:hover { transform: translateY(-2px); border-color: rgba(217,138,61,.45); }
+      .cal-nav:hover { border-color: var(--sun); color: var(--sun); }
+      .cal-cell.has-ev:hover { transform: translateY(-2px); border-color: var(--sun); }
+      .modal-x:hover { background: rgba(33,21,15,.16); }
+    }
+
+    @media (max-width: 1080px) {
+      .about-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px) {
+      .nav-burger { display: flex; }
+      .nav-links {
+        position: absolute; top: calc(100% + 10px); left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 2px;
+        background: rgba(18,12,8,.97); backdrop-filter: blur(18px) saturate(150%);
+        border: 1px solid rgba(255,255,255,.14); border-radius: 22px; padding: 10px;
+        box-shadow: 0 24px 60px rgba(0,0,0,.4);
+        display: flex;
+        opacity: 0;
+        transform: translateY(-8px) scale(.98);
+        pointer-events: none;
+        transition: opacity .2s var(--ease-out), transform .2s var(--ease-out);
+      }
+      .nav.open .nav-links { opacity: 1; transform: none; pointer-events: auto; }
+      .nav-links a { padding: 13px 14px; border-radius: 12px; }
+      .hero-inner { padding-bottom: 34px; }
+      .split, .event, .wa-block, .about-grid { grid-template-columns: 1fr; }
+      .image-card, .quote-panel { min-height: 430px; border-radius: 28px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .event { min-height: auto; border-radius: 28px; }
+      .event-photo { min-height: 220px; }
+      .section { padding: 72px 0; }
+      .btn { width: 100%; }
+      .scroll-note { display: none; }
+      .phone { max-width: 310px; }
+      .cal { padding: 16px; }
+      .cal-cell { min-height: 46px; padding: 5px; }
+      .cal-ev { font-size: 8px; }
+    }
+  
+/* === Premium upgrades === */
+html { scroll-behavior: smooth; }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+.reveal.is-visible { opacity: 1; transform: none; }
+.countdown { display: flex; gap: 10px; justify-content: center; margin: 16px 0 14px; flex-wrap: wrap; }
+.cd-box { display: flex; flex-direction: column; align-items: center; min-width: 62px; padding: 10px 6px; background: rgba(255,244,223,.92); border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+.cd-box span { font-size: 26px; font-weight: 850; color: var(--soil); line-height: 1; font-variant-numeric: tabular-nums; }
+.cd-box small { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(33,21,15,.6); margin-top: 4px; }
+/* Botones: micro-interacción + glow cálido al hover (hover real vive en @media (hover:hover) más arriba; :active vive junto a .btn) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero::before { animation: none !important; transform: scale(1.035) !important; }
+  .nav-links, .modal { transform: none !important; transition: opacity .2s linear !important; }
+}
+
+</style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Nomade home"><img id="brand-logo" class="brand-logo" alt="Nomade" style="display:none" loading="lazy" decoding="async"><span class="mark" id="brand-mark">N</span></a>    <div class="nav-social" id="nav-social">
+      <a class="nav-ig" href="https://instagram.com/socialclub.nomade" target="_blank" rel="noopener" aria-label="Instagram Nomade"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>      <a class="nav-wa" href="https://wa.me/34659615136" target="_blank" rel="noopener" aria-label="WhatsApp Nomade"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.92-9.91zm5.79 14.16c-.25.69-1.45 1.32-1.99 1.36-.53.04-1.05.2-3.53-.74-2.97-1.12-4.86-3.93-5.01-4.11-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.59-.36.79-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.37-.45.5-.15.15-.3.31-.13.6.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.3 2.33 1.45.29.14.46.12.63-.07.17-.19.71-.83.9-1.11.19-.29.38-.24.64-.14.26.09 1.66.78 1.94.92.29.14.48.21.55.33.07.11.07.66-.18 1.35z"/></svg></a>      <a class="nav-tk" id="nav-tk" href="https://www.tiktok.com/@nomade.run.social" target="_blank" rel="noopener" aria-label="TikTok Nomade"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.3v12.5a2.59 2.59 0 0 1-2.59-2.59 2.6 2.6 0 0 1 2.95-2.57v-3.3a5.9 5.9 0 0 0-2.95-.78 5.9 5.9 0 1 0 5.9 5.9V8.94a7.4 7.4 0 0 0 4.33 2.36V8a4.3 4.3 0 0 1-4.3-2.18z"/></svg></a>    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="nav-links">
+      <a href="#club">Qué es</a>
+      <a href="#equipo">Nomade Team</a>
+      <a href="#event">Evento</a>
+      <a href="#diario">Calendario Nomade</a>
+      <a href="#whatsapp">Comunidad</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Colabora</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Move<br>the<br><span id="rot">coast</span>.</h1>
+        <div class="hero-copy">& stay for the people.</div>
+        <div class="hero-actions">
+          <a class="btn primary" href="#event" id="hero-proximo">Próximo evento</a>
+          <a class="btn secondary" href="#whatsapp">Únete a la comunidad</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="club" class="section">
+      <div class="container">
+        <div class="section-kicker">Qué es</div>
+        <p class="section-text">Nomade. Para quienes quieren moverse con gente, descubrir nuevos rincones y convertir el running o el pilates en un atardecer inolvidable. Entrenos para conectar y disfrutar. Cero elitismo. Pura comunidad.</p>
+      </div>
+    </section>
+
+
+    <section id="event" class="section">
+      <div class="container">
+        <div class="event">
+          <div class="event-photo" aria-label="Corredores entrenando"></div>
+          <div class="event-copy">
+            <div>
+              <div class="ev-tabs" role="tablist" aria-label="Tipos de evento">
+                <button class="ev-tab is-active" type="button" role="tab" data-tipo="base" aria-selected="true">Evento Nomade</button>
+                <button class="ev-tab" type="button" role="tab" data-tipo="running" aria-selected="false">Running</button>
+                <button class="ev-tab" type="button" role="tab" data-tipo="pilates" aria-selected="false">Pilates</button>
+              </div>
+
+              <!-- ░░ BARAJA DE TARJETAS — se pinta desde NOMADE.tarjetas, no tocar a mano ░░ -->
+              <div class="ev-deck">
+                <div class="ev-stage" id="ev-stage">
+                  <div class="ev-ghost g1"></div>
+                  <div class="ev-ghost g2"></div>
+                  <div class="ev-card" id="ev-card" role="tabpanel" aria-live="polite"></div>
+                  <button class="ev-arrow" id="ev-prev" type="button" hidden aria-label="Evento más reciente">&#8249;</button>
+                  <button class="ev-arrow" id="ev-next" type="button" hidden aria-label="Evento anterior">&#8250;</button>
+                </div>
+                <div class="ev-count" id="ev-count" hidden></div>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="diario" class="section">
+      <div class="container">
+        <div class="section-kicker">Calendario Nomade</div>
+        <h2 class="section-title">Cada día cuenta.</h2>
+        <p class="section-text">Toca una fecha y revive el evento: las fotos, el recorrido y lo que pasó.</p>
+        <div class="cal" id="cal-wrap"></div>
+      </div>
+    </section>
+
+    <section id="partners" class="section">
+      <div class="container">
+        <div class="section-kicker">Comunidad &amp; partners</div>
+        <h2 class="section-title">Esto ya está pasando.</h2>
+        <div class="stats-row" id="stats-wrap">
+          <div class="stat" id="stat-nomaders" style="display:none"><div class="stat-num"></div><div class="stat-label">nomaders</div></div>
+          <div class="stat" id="stat-asistencias" style="display:none"><div class="stat-num"></div><div class="stat-label">asistencias</div></div>
+          <div class="stat" id="stat-eventos" style="display:none"><div class="stat-num"></div><div class="stat-label">eventos</div></div>
+          <div class="stat" id="stat-mujeres" style="display:none"><div class="stat-num"></div><div class="stat-label">mujeres</div></div>
+          <div class="stat" id="stat-ig" style="display:none"><div class="stat-num"></div><div class="stat-label">followers IG</div></div>
+          <div class="stat" id="stat-wa" style="display:none"><div class="stat-num"></div><div class="stat-label">comunidad WhatsApp</div></div>
+        </div>
+        <div class="partners">
+          <span class="plabel">Espacios donde nos hemos movido</span>
+          <!-- 📍 Espacios donde ha estado Nomade, con su link de Maps embebido.
+               Sirve también de archivo: si se pierde un link, está aquí.
+               Los 5 llevan su link de Maps. -->
+          <span><a href="https://www.google.com/maps/place/La+Mestiza/@37.6637729,-0.7360469,811m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6637687!4d-0.7334666!16s%2Fg%2F11mhhhjhsk" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Mestiza</a></span>
+          <span><a href="https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Dominique</a></span>
+          <span><a href="https://maps.app.goo.gl/h7acttU61MD5pVFo8" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Cangreja Km 0</a></span>
+          <span><a href="https://www.google.com/maps/place/Collados+Beach/@37.780153,-0.7489934,810m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd631a9a2bb0e273:0x21a76e3dfb7ed5bf!8m2!3d37.7801488!4d-0.7464131!16s%2Fg%2F1tdxm6cs" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Collados Beach</a></span>
+          <span><a href="https://maps.app.goo.gl/RttfBACuAEF9Q6M68" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Maloca</a></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="whatsapp" class="section">
+      <div class="container">
+        <div class="section-kicker">Únete a la comunidad</div>
+        <h2 class="section-title">Únete.</h2>
+        <p class="section-text">La comunidad es gratis. Entérate de qué se mueve y no te pierdas ningún evento.</p>
+        <div class="hero-actions" style="margin-top: 24px;">
+          <a class="btn primary" id="c-wa" href="#" target="_blank" rel="noopener">Unirme a WhatsApp</a>
+        </div>
+        <div class="hero-actions" style="margin-top: 12px;">
+          <a class="btn secondary" id="c-spotify" href="#" target="_blank" rel="noopener">Playlist Nomade 🎧</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-kicker">Antes de venir</div>
+        <h2 class="section-title">Preguntas frecuentes.</h2>
+        <div class="faq">
+          <details><summary>¿Necesito buen nivel para el run?</summary><p>No. Corremos juntos y nadie se queda atrás. Ven a tu ritmo — se trata de moverse y conectar, no de competir.</p></details>
+          <details><summary>¿Y si nunca he hecho pilates?</summary><p>Perfecto. La sesión se adapta a todos los niveles. Solo trae ganas.</p></details>
+          <details><summary>¿Puedo ir solo/a?</summary><p>Sí, es lo más normal aquí. Mucha gente viene sola y se va con plan. Cero postureo. Puedes venir con tu grupo de amigos.</p></details>
+          <details><summary>¿Qué llevo?</summary><p>Ropa cómoda, botella de agua y ganas. El dress code es negro.</p></details>
+          <details><summary>¿Cómo reservo y pago?</summary><p>Rellenas el formulario del evento y confirmas la plaza con un Bizum.</p></details>
+          <details><summary>Run o pilates, ¿cuál elijo?</summary><p>El que te pida el cuerpo. Ambos terminan en el mismo after frente al mar.</p></details>
+          <details><summary>¿Hay que ser socio o pagar cuota?</summary><p>No. La comunidad es gratis; solo pagas la entrada del evento al que vengas.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <div class="section-kicker">Colabora</div>
+        <h2 class="section-title">Make your brand Nomade.</h2>
+        <p class="section-text">Marcas, locales y creadores: activad vuestra marca con una comunidad que se mueve de verdad. Mira qué te llevas y hablamos.</p>
+        <div class="contact-row">
+          <span style="display:flex; gap:12px; flex-wrap:nowrap; width:100%;">
+            <a class="btn primary" id="collab-open" href="#" style="flex:1; text-align:center;">Qué te llevas →</a>
+            <a class="btn primary" id="brands-open" href="#" style="flex:1; text-align:center; background: var(--soil); color: var(--cream);">Marcas colaboradoras →</a>
+          </span>
+          <a class="btn secondary" id="c-wa-yoli" href="https://wa.me/34659615136" target="_blank" rel="noopener">WhatsApp directo</a>
+          <a class="btn secondary" id="c-ig" href="https://instagram.com/socialclub.nomade" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn secondary" id="contact-email" href="#" style="display:none"></a>        </div>
+        <p class="section-text" style="margin-top:16px;font-size:15px;">Directo: <a style="color:var(--sun);font-weight:700" href="https://wa.me/34659615136" target="_blank" rel="noopener">+34 659 61 51 36</a><span id="contact-email-line"></span></p>
+      </div>
+    </section>
+
+    <section id="equipo" class="section">
+      <div class="container">
+        <div class="section-kicker">Quiénes somos</div>
+        <p class="section-text">Distintas disciplinas, un mismo objetivo.</p>
+        <div class="about-grid">
+          <div class="person">
+            <img class="pfp" src="assets/yoli.webp" alt="Yolanda Morote" loading="lazy" decoding="async">
+            <div>
+              <h3>Yolanda Morote</h3>
+              <div class="handle"><a href="https://www.instagram.com/yolofit__" target="_blank" rel="noopener">@yolofit__</a></div>
+              <p>Runner y apasionada de la nutrición. Pone los kilómetros y la energía.</p>
+            </div>
+          </div>
+          <div class="person">
+            <img class="pfp" src="assets/miriam.webp" alt="Miriam Meseguer" loading="lazy" decoding="async">
+            <div>
+              <h3>Miriam Meseguer</h3>
+              <div class="handle"><a href="https://instagram.com/mimimese_" target="_blank" rel="noopener">@mimimese_</a></div>
+              <p>Instructora de Pilates & Barre. Pone el movimiento consciente.</p>
+            </div>
+          </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container">
+        <div class="eyebrow" style="margin: 0 auto 20px;"><span class="dot"></span> Come as you are</div>
+        <h2>Vive la experiencia Nomade.</h2>
+        <p>Una comunidad que no deja de crecer. Más de 400 personas han pasado ya por un evento Nomade.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:28px;">
+          <a class="btn primary" href="#whatsapp">Quiero unirme</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-back" id="modal-back" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal-x" id="modal-x" aria-label="Cerrar">×</button>
+      <div class="m-kicker" id="m-fecha"></div>
+      <h3 id="m-titulo"></h3>
+      <p class="m-resumen" id="m-resumen"></p>
+      <div class="detail-rows" id="m-rows"></div>
+      <ul class="m-sorteos" id="m-sorteos"></ul>
+      <div class="hero-actions" id="m-actions"></div>
+    </div>
+  </div>
+
+  <div class="modal-back" id="collab-back" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal-x" id="collab-x" aria-label="Cerrar">×</button>
+      <div class="m-kicker">Colaboraciones</div>
+      <h3>Make your brand Nomade.</h3>
+      <p class="m-resumen">Lo que te llevas trabajando con nosotras:</p>
+      <ul class="benefits">
+        <li>Acceso a una comunidad activa y fiel.</li>
+        <li>Sampling de producto en mano, a un público cualificado.</li>
+        <li>Contenido: fotos y vídeo de tu marca en acción.</li>
+        <li>Presencia de marca en el evento ("X by tu marca").</li>
+        <li>Datos reales: alcance, asistentes y engagement.</li>
+        <li>Activaciones a medida: welcome hour, sorteos, sampling…</li>
+      </ul>
+      <div class="hero-actions" style="margin-top:22px;">
+        <a class="btn primary" style="background: var(--soil); color: var(--cream);" href="https://instagram.com/socialclub.nomade" target="_blank" rel="noopener">Hablamos por Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-back" id="brands-back" role="dialog" aria-modal="true">
+    <div class="modal">
+      <button class="modal-x" id="brands-x" aria-label="Cerrar">×</button>
+      <div class="m-kicker">Histórico</div>
+      <h3>Marcas colaboradoras.</h3>
+      <p class="m-resumen">Las marcas que han pasado por la comunidad Nomade:</p>
+      <div style="display:flex; gap:14px; justify-content:center; align-items:center; flex-wrap:wrap; margin-top:20px;">
+        <a href="https://salubell.com" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/salubell.svg" alt="Salubell" style="height:30px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a>
+        <a href="https://drinklares.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/Lares-Logo.svg" alt="Lares" style="height:26px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a>
+        <a href="https://instagram.com/obradordetartasdequeso" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/queso7.webp" alt="Queso 7" style="height:30px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a>
+        <a href="https://bevitshot.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 50" style="height:30px; width:auto; display:block;" aria-label="Bevitshot"><text x="0" y="38" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="40" letter-spacing="1" fill="#7a1f2b">BEVIT</text><circle cx="91.3" cy="1.3" r="5" fill="#d99a2b"/></svg></a>
+        <a href="https://newgarden.es" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/newgarden.svg" alt="New Garden" style="height:30px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a>
+        <a href="https://vitaminwell.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/vitaminwell.webp" alt="Vitamin Well" style="height:36px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a>
+        <a href="https://huertalista.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/huertalista.png" alt="Huertalista" style="height:24px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a>
+        <a href="https://citypoke.es" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/citypoke.svg" alt="City Poke" style="height:30px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a><a href="https://www.kefigreek.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/kefi.png" alt="Kefi" style="height:36px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a><a href="https://snoozyofficial.com/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/snoozy.png" alt="Snoozy" style="height:26px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a><a href="https://ilusionsportcenter.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; justify-content:center; height:46px; padding:0 14px; background:rgba(255,244,223,.92); border-radius:11px;"><img src="assets/logos/ilusion.svg" alt="Ilusión Sport Center" style="height:30px; width:auto; object-fit:contain;" loading="lazy" decoding="async"></a>
+      </div>
+      <div class="hero-actions" style="margin-top:24px;">
+        <a class="btn primary" style="background: var(--soil); color: var(--cream);" href="https://instagram.com/socialclub.nomade" target="_blank" rel="noopener">¿Quieres colaborar?</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <strong>Nomade. Social & Run Club.</strong>
+      <span>La Manga · 2026 · What's next?</span>
+      <a href="#contacto">Contacto</a>
+      <a href="privacidad.html">Privacidad</a>
+    </div>
+    <div class="footer-row" style="margin-top:14px; font-size:12px; color:rgba(255,244,223,.45);">
+      <span>Tratamos tus datos solo para gestionar los eventos y avisarte de los próximos. Escríbenos y los borramos. <a href="privacidad.html" style="color:inherit;text-decoration:underline">Más info</a>.</span>
+    </div>
+  </footer>
+
+  <script>
+  /* Pinta la CONFIG en la página — no tocar */
+  (function () {
+    const $ = id => document.getElementById(id);
+
+    /* menú hamburguesa */
+    const navEl = $('nav'), burger = $('nav-burger'), navLinks = $('nav-links');
+    if (burger && navEl) {
+      burger.addEventListener('click', () => {
+        const open = navEl.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      if (navLinks) navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navEl.classList.remove('open'); burger.setAttribute('aria-expanded', 'false');
+      }));
+    }
+    /* --- 🃏 Tarjetas de evento: tres barajas (base / running / pilates).
+       El cromo tiene tamaño fijo (manda la tarjeta más alta de todas las barajas,
+       medida en vivo), gira en 3D al cambiar y hace tilt bajo el ratón. --- */
+    (function () {
+      const T = NOMADE.tarjetas || {};
+      const stage = $('ev-stage'), card = $('ev-card'), prev = $('ev-prev'), next = $('ev-next'), count = $('ev-count');
+      if (!card || !stage) return;
+      let tipo = 'base', idx = 0, cdTimer = null, animando = false;
+
+      /* 🔑 19 ago · qué tarjeta se enseña primero en una baraja: la que está ABIERTA.
+         Antes era siempre la [0] y, al cerrarse un evento, la baraja abría por una
+         tarjeta con "inscripción cerrada" aunque hubiera otra abierta detrás. */
+      function primeraUtil(list) {
+        if (!list || !list.length) return 0;
+        let i = list.findIndex(c => c.estado === 'abierta');
+        if (i < 0) i = list.findIndex(c => c.estado === 'proximamente');
+        return i < 0 ? 0 : i;
+      }
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function cardHTML(c) {
+        let h = '<div class="cromo-body">';
+        const sold = c.estado === 'soldout';
+        const cerrada = c.estado === 'cerrada';
+        if (sold) h += '<div class="soldout-band inflow">SOLD OUT<span class="soldout-sub">' + (c.sello || 'plazas agotadas') + '</span></div>';
+        else if (cerrada) h += '<div class="soldout-band inflow larga">INSCRIPCIÓN CERRADA<span class="soldout-sub">' + (c.sello || 'evento finalizado') + '</span></div>';
+        h += '<h2>' + c.fechaTitulo + '</h2>';
+        if (c.meta) h += '<p class="event-meta">' + c.meta + '</p>';
+        if (c.detalles && c.detalles.length) {
+          h += '<div class="detail-rows">';
+          c.detalles.forEach(d => { h += '<div class="detail-row"><span>' + d[0] + '</span><strong>' + d[1] + '</strong></div>'; });
+          h += '</div>';
+        }
+        if (c.nota) h += '<p class="event-fine" style="text-align:center; margin-top:14px;">' + c.nota + '</p>';
+        if (c.estado === 'abierta' && c.fechaISO) {
+          h += '<div class="countdown" aria-label="Cuenta atrás para el evento">'
+            + '<div class="cd-box"><span id="cd-d">--</span><small>dias</small></div>'
+            + '<div class="cd-box"><span id="cd-h">--</span><small>horas</small></div>'
+            + '<div class="cd-box"><span id="cd-m">--</span><small>min</small></div>'
+            + '<div class="cd-box"><span id="cd-s">--</span><small>seg</small></div></div>';
+        }
+        h += '</div>';
+        if (c.estado === 'abierta' && c.formUrl) {
+          h += '<p style="margin:12px 0 0; font-size:12px; color:rgba(33,21,15,.55);">El formulario es de Google Forms: al abrirlo, Google tratará tus datos (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">política</a>).</p>';
+        }
+        let ctaTxt, ctaHref;
+        if (c.estado === 'abierta' && c.formUrl) { ctaTxt = 'Reserva tu plaza'; ctaHref = c.formUrl; }
+        else if ((sold || cerrada) && c.fotos) { ctaTxt = 'Ver fotos'; ctaHref = c.fotos; }
+        else { ctaTxt = 'Avísame en el grupo'; ctaHref = NOMADE.whatsapp; }
+        h += '<div class="hero-actions">'
+          + '<a class="btn primary" style="background: var(--soil); color: var(--cream);" href="' + ctaHref + '" target="_blank" rel="noopener">' + ctaTxt + '</a>'
+          + '<a class="btn secondary" style="border-color: rgba(33,21,15,.18); color: var(--soil); background: rgba(33,21,15,.06);" href="#contacto">Dudas</a></div>';
+        return h;
+      }
+
+      function contentHTML(c) { return '<div class="cromo">' + cardHTML(c) + '</div>'; }
+
+      function startCountdown(iso) {
+        const target = new Date(iso);
+        const p = n => String(n).padStart(2, '0');
+        function tick() {
+          let diff = Math.max(0, target - new Date());
+          const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+          const hh = Math.floor(diff / 3600000); diff -= hh * 3600000;
+          const m = Math.floor(diff / 60000); diff -= m * 60000;
+          const s = Math.floor(diff / 1000);
+          const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+          set('cd-d', d); set('cd-h', p(hh)); set('cd-m', p(m)); set('cd-s', p(s));
+        }
+        tick(); cdTimer = setInterval(tick, 1000);
+      }
+
+      function mount() {
+        if (cdTimer) { clearInterval(cdTimer); cdTimer = null; }
+        const list = T[tipo] || [];
+        if (!list.length) { card.innerHTML = ''; if (prev) prev.hidden = true; if (next) next.hidden = true; if (count) count.hidden = true; return; }
+        idx = Math.max(0, Math.min(idx, list.length - 1));
+        const c = list[idx];
+        card.innerHTML = contentHTML(c);
+        if (c.estado === 'abierta' && c.fechaISO) startCountdown(c.fechaISO);
+        const many = list.length > 1;
+        stage.classList.toggle('has-deck', many);
+        if (prev) { prev.hidden = !many; prev.disabled = idx === 0; }
+        if (next) { next.hidden = !many; next.disabled = idx === list.length - 1; }
+        if (count) { count.hidden = !many; count.textContent = (idx + 1) + ' / ' + list.length; }
+      }
+
+      /* tamaño fijo: mide TODAS las tarjetas de TODAS las barajas y fija la
+         altura del cromo a la mayor, así nada salta al navegar ni al cambiar
+         de pestaña. Se recalcula al cargar las fuentes y al redimensionar. */
+      function equalize() {
+        const w = card.getBoundingClientRect().width;
+        if (!w) return;
+        const meas = document.createElement('div');
+        meas.style.cssText = 'position:absolute; left:-9999px; top:0; width:' + w + 'px; visibility:hidden; pointer-events:none;';
+        document.body.appendChild(meas);
+        let max = 0;
+        Object.keys(T).forEach(k => (T[k] || []).forEach(c => {
+          meas.innerHTML = contentHTML(c);
+          const el = meas.firstChild;
+          el.style.minHeight = '0';
+          max = Math.max(max, el.offsetHeight);
+        }));
+        document.body.removeChild(meas);
+        if (max) stage.style.setProperty('--cromo-h', Math.ceil(max) + 'px');
+      }
+
+      function swapTo(nIdx, nTipo, dir) {
+        if (animando) return;
+        animando = true;
+        const after = () => {
+          if (nTipo) tipo = nTipo;
+          idx = nIdx;
+          mount();
+          card.classList.add('no-t', dir > 0 ? 'in-r' : 'in-l');
+          void card.offsetWidth;
+          card.classList.remove('no-t');
+          card.classList.remove('in-r', 'in-l');
+          setTimeout(() => { animando = false; }, 280);
+        };
+        if (reduced) { after(); return; }
+        card.classList.add(dir > 0 ? 'out-l' : 'out-r');
+        setTimeout(() => { card.classList.remove('out-l', 'out-r'); after(); }, 230);
+      }
+
+      document.querySelectorAll('.ev-tab').forEach(t => t.addEventListener('click', () => {
+        if (t.dataset.tipo === tipo) return;
+        document.querySelectorAll('.ev-tab').forEach(o => { const on = o === t; o.classList.toggle('is-active', on); o.setAttribute('aria-selected', on ? 'true' : 'false'); });
+        swapTo(primeraUtil(T[t.dataset.tipo]), t.dataset.tipo, 1);
+      }));
+      /* 🔗 19 ago · API del carrusel para que el calendario y el hero puedan
+         abrir una tarjeta concreta. Antes el calendario solo sabía cambiar de
+         pestaña, y siempre caía en la primera tarjeta de la baraja. */
+      function buscarPorFecha(f) {
+        for (const k of Object.keys(T)) {
+          const i = (T[k] || []).findIndex(c => (c.fechaTitulo || '').indexOf(f) >= 0);
+          if (i >= 0) return { tipo: k, idx: i };
+        }
+        return null;
+      }
+      function proximoAbierto() {
+        const ahora = new Date(); let mejor = null;
+        Object.keys(T).forEach(k => (T[k] || []).forEach((c, i) => {
+          if (c.estado !== 'abierta') return;
+          const t = c.fechaISO ? new Date(c.fechaISO) : null;
+          if (t && t < ahora) return;
+          const peso = t ? t.getTime() : Infinity;
+          if (!mejor || peso < mejor.peso) mejor = { tipo: k, idx: i, peso: peso };
+        }));
+        return mejor;
+      }
+      function irASeccion() {
+        const sec = document.getElementById('event');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function activarTab(nTipo) {
+        document.querySelectorAll('.ev-tab').forEach(o => {
+          const on = o.dataset.tipo === nTipo;
+          o.classList.toggle('is-active', on);
+          o.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+      }
+      function irA(nTipo, nIdx) {
+        activarTab(nTipo);
+        if (nTipo === tipo && nIdx === idx) { mount(); irASeccion(); return true; }
+        swapTo(nIdx, nTipo, 1); irASeccion(); return true;
+      }
+      window.NOMADE_CARDS = {
+        hay: f => !!buscarPorFecha(f),
+        ver: f => { const r = buscarPorFecha(f); return r ? irA(r.tipo, r.idx) : false; },
+        verProximo: () => { const r = proximoAbierto(); return r ? irA(r.tipo, r.idx) : false; }
+      };
+
+      if (prev) prev.addEventListener('click', () => { if (idx > 0) swapTo(idx - 1, null, -1); });
+      if (next) next.addEventListener('click', () => { const list = T[tipo] || []; if (idx < list.length - 1) swapTo(idx + 1, null, 1); });
+
+      /* swipe en móvil: izquierda = más antiguo, derecha = más reciente */
+      let x0 = null;
+      card.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+      card.addEventListener('touchend', e => {
+        if (x0 == null) return;
+        const dx = e.changedTouches[0].clientX - x0; x0 = null;
+        if (Math.abs(dx) < 45) return;
+        const list = T[tipo] || [];
+        if (dx < 0 && idx < list.length - 1) swapTo(idx + 1, null, 1);
+        else if (dx > 0 && idx > 0) swapTo(idx - 1, null, -1);
+      }, { passive: true });
+
+      /* 🐛🔧 BRILLO DE CROMO BAJO EL RATÓN — sustituye al tilt 3D. NO VOLVER A ROTAR LA CARTA.
+         ────────────────────────────────────────────────────────────────────────────
+         El tilt original hacía `rotateY/rotateX` sobre `.cromo`, que es el elemento
+         que CONTIENE los botones. Con la carta rotada, el navegador dispara los
+         eventos de ratón sobre `.ev-card` en vez de sobre el enlace, aunque el cursor
+         esté visualmente dentro del botón (`elementsFromPoint` sí devolvía el enlace:
+         la geometría del hit-test y la que se pinta no coinciden con la rotación 3D).
+         Resultado: en escritorio NINGÚN botón ni enlace de la tarjeta funcionaba; en
+         móvil sí, porque ahí el tilt no se activa (`pointer: fine` es falso).
+         Reproducido y aislado el 5 ago con Chromium: desactivando solo el tilt, los
+         cinco enlaces de las tres barajas vuelven a responder.
+         El efecto se conserva moviendo el REFLEJO (`.cromo::after`, que es
+         `pointer-events: none`), así que no toca la geometría de nada pulsable. */
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduced) {
+        stage.addEventListener('pointermove', e => {
+          if (animando) return;
+          const cr = card.querySelector('.cromo'); if (!cr) return;
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - .5;
+          cr.style.setProperty('--shine-x', (x * 170).toFixed(0) + 'px');
+        });
+        stage.addEventListener('pointerleave', () => {
+          const cr = card.querySelector('.cromo'); if (cr) cr.style.removeProperty('--shine-x');
+        });
+      }
+
+      idx = primeraUtil(T[tipo]);
+
+      mount();
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(equalize); } else { setTimeout(equalize, 300); }
+      let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(equalize, 200); });
+    })();
+
+    /* 🔗 19 ago · "Próximo evento" abre la tarjeta abierta más cercana, sea de
+       running o de pilates, en vez de dejar la baraja base en "próximamente". */
+    (function () {
+      const bt = document.getElementById('hero-proximo');
+      if (!bt) return;
+      bt.addEventListener('click', e => {
+        if (window.NOMADE_CARDS && NOMADE_CARDS.verProximo()) e.preventDefault();
+      });
+    })();
+
+    $('c-wa').href = NOMADE.whatsapp;
+    /* Club de Strava retirado (29 jul) — el botón ya no existe en el DOM */
+    $('c-spotify').href = NOMADE.spotify;
+
+    /* enlaces extra + contacto + stats */
+    const setHref = (id, url) => { const el = $(id); if (el && url) el.href = url; };
+    setHref('c-ig', NOMADE.instagram);
+    setHref('c-wa-yoli', NOMADE.whatsappYoli);
+    if (NOMADE.logo) { const bl = $('brand-logo'); if (bl) { bl.src = NOMADE.logo; bl.style.display = ''; } const bm = $('brand-mark'); if (bm) bm.style.display = 'none'; }
+    if (NOMADE.email) {
+      const em = $('contact-email');
+      if (em) { em.href = 'mailto:' + NOMADE.email; em.textContent = NOMADE.email; em.style.display = ''; }
+      const line = $('contact-email-line');
+      if (line) line.innerHTML = ' · <a style="color:var(--sun);font-weight:700" href="mailto:' + NOMADE.email + '">' + NOMADE.email + '</a>';
+    }
+    (function () {
+      const s = NOMADE.stats || {};
+      const items = [['stat-nomaders', s.nomaders], ['stat-asistencias', s.asistencias], ['stat-eventos', s.eventos], ['stat-mujeres', s.mujeres], ['stat-ig', s.followersIg], ['stat-wa', s.whatsapp]];
+      let any = false;
+      items.forEach(([id, v]) => {
+        const el = $(id);
+        if (el && v) { el.querySelector('.stat-num').textContent = v; el.style.display = ''; any = true; }
+      });
+      const wrap = $('stats-wrap');
+      if (wrap && !any) wrap.style.display = 'none';
+    })();
+
+    /* --- Diario del club: calendario + popup --- */
+    const back = $('modal-back');
+
+    function abrir(ev) {
+      $('m-fecha').innerHTML = ev.fecha + ' · ' + ev.lugar;
+      $('m-titulo').textContent = ev.titulo;
+      $('m-resumen').innerHTML = ev.resumen || '';
+
+      const rows = $('m-rows'); rows.innerHTML = '';
+      [['Lugar', ev.lugar], ['Asistentes', ev.asistentes]].forEach(([k, v]) => {
+        if (!v) return;
+        const d = document.createElement('div');
+        d.className = 'detail-row';
+        d.innerHTML = '<span>' + k + '</span><strong>' + v + '</strong>';
+        rows.appendChild(d);
+      });
+
+      const ul = $('m-sorteos'); ul.innerHTML = '';
+      (ev.sorteos || []).forEach(s => {
+        const li = document.createElement('li'); li.textContent = '🎁 ' + s; ul.appendChild(li);
+      });
+
+      const acts = $('m-actions'); acts.innerHTML = '';
+      if (ev.fotos) acts.insertAdjacentHTML('beforeend',
+        '<a class="btn primary" href="' + ev.fotos + '" target="_blank" rel="noopener">Ver las fotos 📸</a>');
+      if (ev.rutaStrava) acts.insertAdjacentHTML('beforeend',
+        '<a class="btn secondary" href="' + ev.rutaStrava + '" target="_blank" rel="noopener">El recorrido en Strava</a>');
+      if (ev.cta && ev.cta.url) {
+        const esInterno = ev.cta.url.charAt(0) === '#';
+        const attrs = esInterno ? '' : ' target="_blank" rel="noopener"';
+        acts.insertAdjacentHTML('beforeend',
+          '<a class="btn primary" href="' + ev.cta.url + '"' + attrs + '>' + ev.cta.texto + '</a>');
+        if (esInterno) {
+          const link = acts.lastElementChild;
+          link.addEventListener('click', () => {
+            if (ev.cta.tab) { const t = document.querySelector('.ev-tab[data-tipo="' + ev.cta.tab + '"]'); if (t) t.click(); }
+            cerrar();
+          });
+        }
+      }
+
+      /* 🔗 19 ago · si esa fecha tiene tarjeta en alguna baraja, se ofrece ir a ella.
+         Antes el popup solo sabía cambiar de pestaña y caía en la tarjeta [0]. */
+      if (window.NOMADE_CARDS && NOMADE_CARDS.hay(ev.fecha)) {
+        acts.insertAdjacentHTML('beforeend',
+          '<a class="btn secondary" href="#event">Ver la tarjeta del evento</a>');
+        acts.lastElementChild.addEventListener('click', e => {
+          e.preventDefault(); cerrar(); NOMADE_CARDS.ver(ev.fecha);
+        });
+      }
+
+      back.classList.add('open');
+    }
+
+    function cerrar() { back.classList.remove('open'); }
+    $('modal-x').addEventListener('click', cerrar);
+    back.addEventListener('click', e => { if (e.target === back) cerrar(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrar(); });
+
+    const calWrap = $('cal-wrap');
+    const meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+    const YEAR = 2026;
+    const pad = n => String(n).padStart(2, '0');
+    const mesDe = f => parseInt(f.split('.')[1], 10);
+    const eventosPorFecha = {};
+    NOMADE.eventos.forEach(ev => { eventosPorFecha[ev.fecha] = ev; });
+    const proximosSet = new Set(NOMADE.proximos || []);
+    /* 📅 Semanal en el calendario: martes running / jueves pilates.
+       Pinta "próximamente" en los martes y jueves FUTUROS de agosto sin evento registrado.
+       Cuando un martes/jueves se cierra de verdad, se añade a `eventos` y esta celda
+       se sustituye sola por la real. */
+    const SEMANAL = { 2: 'Próx. running', 4: 'Próx. pilates' };
+    /* Semanas en las que el running/pilates de ese día NO se hace (se movió o se salta).
+       Sin esto, el martes 11.08 saldría como "Próx. running" y esa semana el running
+       es el miércoles 12 por el eclipse. */
+    const SIN_SEMANAL = new Set(['11.08']);
+    const HOY = new Date(); HOY.setHours(0, 0, 0, 0);
+    let mesActual = (NOMADE.proximos && NOMADE.proximos.length) ? mesDe(NOMADE.proximos[0])
+      : (NOMADE.eventos.length ? mesDe(NOMADE.eventos[NOMADE.eventos.length - 1].fecha) : 7);
+
+    function renderCal(mes) {
+      calWrap.innerHTML = '';
+      const head = document.createElement('div'); head.className = 'cal-head';
+      const prev = document.createElement('button'); prev.className = 'cal-nav'; prev.type = 'button'; prev.textContent = '‹'; prev.setAttribute('aria-label', 'Mes anterior');
+      const next = document.createElement('button'); next.className = 'cal-nav'; next.type = 'button'; next.textContent = '›'; next.setAttribute('aria-label', 'Mes siguiente');
+      const title = document.createElement('div'); title.className = 'cal-title'; title.textContent = meses[mes - 1] + ' ' + YEAR;
+      prev.addEventListener('click', () => { mesActual = mes <= 1 ? 12 : mes - 1; renderCal(mesActual); });
+      next.addEventListener('click', () => { mesActual = mes >= 12 ? 1 : mes + 1; renderCal(mesActual); });
+      head.append(prev, title, next);
+      calWrap.appendChild(head);
+
+      const grid = document.createElement('div'); grid.className = 'cal-grid';
+      ['L','M','X','J','V','S','D'].forEach(d => { const w = document.createElement('div'); w.className = 'cal-wd'; w.textContent = d; grid.appendChild(w); });
+      const offset = (new Date(YEAR, mes - 1, 1).getDay() + 6) % 7;
+      const dias = new Date(YEAR, mes, 0).getDate();
+      for (let i = 0; i < offset; i++) { const e = document.createElement('div'); e.className = 'cal-cell empty'; grid.appendChild(e); }
+      for (let d = 1; d <= dias; d++) {
+        const f = pad(d) + '.' + pad(mes);
+        const cell = document.createElement('div'); cell.className = 'cal-cell';
+        cell.innerHTML = '<span class="cal-daynum">' + d + '</span>';
+        const ev = eventosPorFecha[f];
+        if (ev) {
+          cell.classList.add('has-ev');
+          if (proximosSet.has(f)) cell.classList.add('next');   /* glow "Próximo 🧡" también con evento registrado */
+          cell.innerHTML += '<span class="cal-ev">' + ev.titulo.split('·')[0].trim() + '</span>';
+          cell.addEventListener('click', () => abrir(ev));
+        } else if (proximosSet.has(f)) {
+          cell.classList.add('has-ev', 'next');
+          cell.innerHTML += '<span class="cal-ev">VOL. 3</span>';
+          cell.addEventListener('click', () => { const ev = eventosPorFecha[f]; if (ev) abrir(ev); else { const b = $('next-back'); if (b) b.classList.add('open'); } });
+        } else if (mes === 8) {
+          const dia = new Date(YEAR, mes - 1, d);
+          const dow = dia.getDay();
+          if (dia >= HOY && SEMANAL[dow] && !SIN_SEMANAL.has(f)) {
+            cell.classList.add('has-ev', 'soon-week');
+            cell.innerHTML += '<span class="cal-ev">' + SEMANAL[dow] + '</span>';
+            cell.addEventListener('click', () => {
+              const t = document.querySelector('.ev-tab[data-tipo="' + (dow === 2 ? 'running' : 'pilates') + '"]');
+              if (t) t.click();
+              const s = document.getElementById('event');
+              if (s) s.scrollIntoView({ behavior: 'smooth' });
+            });
+          }
+        }
+        grid.appendChild(cell);
+      }
+      calWrap.appendChild(grid);
+    }
+    renderCal(mesActual);
+
+    /* popup colaboraciones */
+    const collabBack = $('collab-back'), collabOpen = $('collab-open');
+    if (collabBack && collabOpen) {
+      const closeC = () => collabBack.classList.remove('open');
+      collabOpen.addEventListener('click', e => { e.preventDefault(); collabBack.classList.add('open'); });
+      $('collab-x').addEventListener('click', closeC);
+      collabBack.addEventListener('click', e => { if (e.target === collabBack) closeC(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeC(); });
+    }
+
+    /* popup marcas colaboradoras (histórico) */
+    const brandsBack = $('brands-back'), brandsOpen = $('brands-open');
+    if (brandsBack && brandsOpen) {
+      const closeB = () => brandsBack.classList.remove('open');
+      brandsOpen.addEventListener('click', e => { e.preventDefault(); brandsBack.classList.add('open'); });
+      $('brands-x').addEventListener('click', closeB);
+      brandsBack.addEventListener('click', e => { if (e.target === brandsBack) closeB(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeB(); });
+    }
+  })();
+  </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  try {
+    var targets = document.querySelectorAll('section');
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function(t){ t.classList.add('is-visible'); });
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      targets.forEach(function(t){ t.classList.add('reveal'); io.observe(t); });
+    }
+  } catch(e){}
+});
+
+/* Hero: palabra rotativa con efecto typing (coast/body/soul/mind/heart) */
+(function () {
+  var el = document.getElementById('rot');
+  if (!el) return;
+  var words = ['coast', 'body', 'soul', 'mind', 'heart'];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { el.textContent = 'coast'; return; }
+  var w = 0, i = 0, deleting = false;
+  function step() {
+    var word = words[w];
+    if (!deleting) {
+      i++;
+      el.textContent = word.slice(0, i);
+      if (i === word.length) { deleting = true; return setTimeout(step, 1400); }
+    } else {
+      i--;
+      el.textContent = word.slice(0, i);
+      if (i === 0) { deleting = false; w = (w + 1) % words.length; }
+    }
+    setTimeout(step, deleting ? 55 : 110);
+  }
+  step();
+})();
+</script>
+
+</body>
+</html>
