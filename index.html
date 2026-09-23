@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <script src="assets/i18n.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Nomade. Social & Run Club.</title>
@@ -18,12 +17,7 @@
     @font-face { font-family: 'DM Sans'; font-style: italic; font-weight: 300 1000; font-display: swap; src: url("assets/fonts/dmsans-italic-latinext.woff2") format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
     @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500 700; font-display: swap; src: url("assets/fonts/spacegrotesk-latin.woff2") format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
     @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500 700; font-display: swap; src: url("assets/fonts/spacegrotesk-latinext.woff2") format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
-
-    .language-switch { display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; min-width:38px; height:34px; padding:0 8px; border:1px solid rgba(255,255,255,.3); border-radius:999px; color:var(--cream); font:700 12px "DM Sans",sans-serif; letter-spacing:.04em; text-decoration:none; }
-    .language-switch:hover { background:rgba(255,255,255,.12); border-color:var(--sun); }
-    .language-switch:focus-visible { outline:2px solid var(--sun); outline-offset:3px; }
-    @media(max-width:400px) { .nav { padding-left:12px; padding-right:12px; } .nav-social { gap:5px; margin-right:6px; } .brand-logo { max-width:100px; } }
-</style>
+  </style>
   <link rel="icon" href="assets/favicon/favicon.ico" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.webp" />
@@ -43,7 +37,7 @@
     email: "socialclub.nomade@gmail.com",               // email de contacto
     telefono: "+34 659 61 51 36",
     whatsappYoli: "https://wa.me/34659615136",         // WhatsApp directo a Yoli (dudas / colaboraciones)
-    stats: { nomaders: "+400", asistencias: "+500", eventos: "15", mujeres: "~70%", followersIg: "+2,6K", whatsapp: "+459" },
+    stats: { nomaders: "+400", asistencias: "+500", eventos: "17", mujeres: "~70%", followersIg: "+2,6K", whatsapp: "+459" },
 
     /* 🃏 TARJETAS DE EVENTO — tres barajas: base / running / pilates.
        La PRIMERA tarjeta de cada lista es la que se ve al entrar; detrás quedan
@@ -63,10 +57,10 @@
            Ultimo despliegue de Carlos: a partir de aqui las tarjetas las llevan Yoli y Miriam. */
         { estado: "abierta", fechaTitulo: "Sábado 19.09",
           meta: "Nomade x AURA · Run & Pilates & Brunch & DJ & Coffee Party. Welcome to the Morning Club: una mañana entera de movimiento y música en Murcia.",
-          detalles: [["Hora", "10:00"], ["Lugar", "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Todo+Passa+360+Club+Calle+Madre+Esperanza+5+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Todo Passa 360 Club</a> · C/ Madre Esperanza 5, Murcia"], ["Runners", "15€ · carrera con breathwork"], ["Movers", "30€ · Pilates Sculpt, plazas muy limitadas"], ["Incluye", "Brunch completo, after con Coffee y sorteos 🧡"], ["Dress code", "Negro"], ["Trae", "Toalla y botella de agua si haces pilates"]],
-          formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSflP8Rom4E_UHxb6d6iMDSzEfF7VCTAvFLkbWXsMYLuQ7Th9w/viewform",
+          detalles: [["Hora", "10:00 · el after desde las 11:00"], ["Lugar", "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Todo+Passa+360+Club+Calle+Madre+Esperanza+5+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Todo Passa 360 Club</a> · C/ Madre Esperanza 5, Murcia"], ["Runners", "15€ · carrera con breathwork, brunch y after"], ["Movers", "Pilates Sculpt · agotado"], ["Solo after", "12€ · desde las 11:00"], ["El after", "Coffee party y brunch, sorteos y regalos, masajes y presoterapia 🧡"], ["Trae a un amigo", "20% de descuento para los dos con el código TOGETHER20"], ["Dress code", "Negro"], ["Trae", "Toalla y botella de agua si haces pilates"]],
+          formUrl: "https://kibiapp.com/app/activity-detail/tumh",   /* 8 sep · la reserva se lleva en Kibi, ya no en el form de Google */
           fechaISO: "2026-09-19T10:00:00",
-          nota: "Al reservar eliges equipo: Runners o Movers 🧡" },
+          nota: "El pilates ya está agotado. Quedan plazas de running y de solo after 🧡" },
         { estado: "proximamente", fechaTitulo: "Próximamente",
           meta: "El próximo evento Nomade se anuncia primero en el grupo de WhatsApp.",
           detalles: [["Formato", "Running + pilates + social after"], ["Dónde", "Frente al mar, en un rincón nuevo"]],
@@ -80,17 +74,25 @@
           detalles: [["Lugar", "<a href=\"https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Dominique</a>"]] },
         { estado: "soldout", sello: "~60 nomaders", fechaTitulo: "Sábado 20.06",
           meta: "Vol. 1 · Lanzamiento. El primero. Donde empezó todo 🧡",
-          detalles: [["Lugar", "<a href=\"https://www.google.com/maps/place/La+Mestiza/@37.6637729,-0.7360469,811m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6637687!4d-0.7334666!16s%2Fg%2F11mhhhjhsk\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Mestiza</a>"]] }
+          detalles: [["Lugar", "<a href=\"https://www.google.com/maps/place/La+Mestiza/@37.6637729,-0.7360469,811m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6637687!4d-0.7334666!16s%2Fg%2F11mhhhjhsk\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Mestiza</a>"]],
+          fotos: "https://drive.google.com/drive/folders/147U2x_nuyymhF8P4Of5ljd5VBmRQm9Tg?usp=sharing" }
       ],
       running: [
+        /* 🥐 03.10 · Nomade x Temperato en Plaza de las Flores (Murcia). Copy y enlace de Kibi de Yoli, 14 sep.
+           El enlace del sitio es una busqueda de Maps: cambiarlo por el corto cuando lo pasen. */
+        { estado: "abierta", fechaTitulo: "Sábado 03.10",
+          meta: "Nomade x Temperato · Run, Walk &amp; Breakfast. 5 km por el centro de Murcia, corriendo o andando, y desayuno en Temperato al acabar.",
+          detalles: [["Hora", "9:00"], ["Lugar", "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Temperato+Plaza+de+las+Flores+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Temperato</a> · Plaza de las Flores, Murcia"], ["Entrada", "15€"], ["Recorrido", "5K · corriendo o andando"], ["Incluye", "La participación en el run o walk y el desayuno en Temperato 🧡"]],
+          formUrl: "https://kibiapp.com/app/activity-detail/est8",
+          fechaISO: "2026-10-03T09:00:00",
+          nota: "Se puede hacer corriendo o andando, cada una a su ritmo 🧡" },
         /* 🏃 06.09 · Nomade x NOW Running en Pickles Bar, Cabo de Palos. Abierta el 31 ago
            con el copy y el formulario de Yoli. Es el primer evento con NOW, de Cartagena. */
-        { estado: "abierta", fechaTitulo: "Domingo 06.09",
+        { estado: "soldout", sello: "plazas agotadas", fechaTitulo: "Domingo 06.09",
           meta: "Nomade x NOW Running. 5 km por Cabo de Palos y, a la vuelta, brunch y DJ set. La primera vez que corremos con el club de Cartagena.",
-          detalles: [["Hora", "8:30 recepción · 9:00 salida"], ["Lugar", "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Pickles+Bar+Cabo+de+Palos+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Pickles Bar</a> · Cabo de Palos"], ["Entrada", "15€"], ["Recorrido", "5K"], ["Incluye", "Brunch con café, tostada y fruta, DJ set, sorteos y sorpresas 🧡"], ["Dress code", "Negro"], ["Trae", "Toalla y bañador si te apetece un baño al acabar"]],
-          formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfFWLqoTefG4i__nUueHOf0Qtyue7ww7Wk0jCYpKh-htt9BxQ/viewform",
-          fechaISO: "2026-09-06T08:30:00",
-          nota: "Lo hacemos con NOW Running, de Cartagena 🧡" },
+          detalles: [["Hora", "8:30 recepción · 9:00 salida"], ["Lugar", "<a href=\"https://maps.app.goo.gl/3egVCVmHDbKVCcNfA\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Pickles Bar</a> · Cabo de Palos"], ["Entrada", "15€"], ["Recorrido", "5K"], ["Incluye", "Brunch con café, tostada y fruta, DJ set, sorteos y sorpresas 🧡"], ["Dress code", "Negro"], ["Trae", "Toalla y bañador si te apetece un baño al acabar"]],
+          fotos: "https://drive.google.com/drive/folders/1vahRpBaxNY_jBOosnbY_TI8KdL2k8epn?usp=sharing",
+          nota: "Agotado. Lo hicimos con NOW Running, de Cartagena 🧡" },
         /* 🌅 SOCIAL RUN & SUNSET 25.08 — evento conjunto con Barré Murcia. Form y ubicacion los pasa Carlos (13 ago). */
         { estado: "soldout", sello: "70 personas", fechaTitulo: "Martes 25.08",
           meta: "Social Run &amp; Sunset. Lo hacemos con Barré Murcia: 5 km al atardecer en dos grupos y after en Maloca.",
@@ -167,7 +169,7 @@
         lugar: "La Mestiza",
         asistentes: "alrededor de 60 nomaders",
         resumen: "El primero. Donde empezó todo 🧡",
-        fotos: "",  // link WeTransfer del 20/06 caducado — poner link permanente cuando lo haya
+        fotos: "https://drive.google.com/drive/folders/147U2x_nuyymhF8P4Of5ljd5VBmRQm9Tg?usp=sharing",  // 8 sep · sustituye al WeTransfer caducado
         rutaStrava: "",
         sorteos: ["Glow Shots by Salubell"]
       },
@@ -338,27 +340,38 @@
       {
         fecha: "06.09",
         titulo: "Nomade x NOW Running · 5 km, brunch y DJ set",
-        lugar: "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Pickles+Bar+Cabo+de+Palos+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">Pickles Bar</a> · Cabo de Palos",
+        lugar: "<a href=\"https://maps.app.goo.gl/3egVCVmHDbKVCcNfA\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">Pickles Bar</a> · Cabo de Palos",
         asistentes: "",
         resumen: "8:30 recepción y 9:00 salida · 5 km por Cabo de Palos con NOW Running, el club de Cartagena, y a la vuelta brunch con café, tostada y fruta, DJ set, sorteos y sorpresas. Dress code negro. 15€. Trae toalla y bañador si te apetece un baño al acabar.",
-        fotos: "",
+        fotos: "https://drive.google.com/drive/folders/1vahRpBaxNY_jBOosnbY_TI8KdL2k8epn?usp=sharing",
         rutaStrava: "",
         sorteos: [],
-        cta: { texto: "Reserva tu plaza", url: "https://docs.google.com/forms/d/e/1FAIpQLSfFWLqoTefG4i__nUueHOf0Qtyue7ww7Wk0jCYpKh-htt9BxQ/viewform" }
+        cta: {}  // sold out, evento celebrado el 6 sep
       },
       {
         fecha: "19.09",
         titulo: "Nomade x AURA · Run & Pilates & Brunch & Coffee Party",
         lugar: "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Todo+Passa+360+Club+Calle+Madre+Esperanza+5+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Todo Passa 360 Club</a> · C/ Madre Esperanza 5, Murcia",
         asistentes: "",
-        resumen: "10:00 · la primera vez que juntamos las dos tribus en una sola cita. Runners a 15€ y Movers de Pilates Sculpt a 30€, con plazas muy limitadas. Las dos entradas incluyen la sesión con breathwork, brunch completo, after con Coffee y sorteos. Dress code negro; si haces pilates trae toalla y agua.",
+        resumen: "10:00 · la primera vez que juntamos las dos tribus en una sola cita. Runners a 15€, con carrera, brunch y after. El Pilates Sculpt está agotado. Y hay entrada de solo after a 12€ desde las 11:00, con coffee party y brunch, sorteos y regalos, y masajes y presoterapia. Si vienes con alguien, 20% de descuento para los dos con el código TOGETHER20. Dress code negro; si haces pilates trae toalla y agua.",
         fotos: "",
         rutaStrava: "",
         sorteos: [],
-        cta: { texto: "Reserva tu plaza", url: "https://docs.google.com/forms/d/e/1FAIpQLSflP8Rom4E_UHxb6d6iMDSzEfF7VCTAvFLkbWXsMYLuQ7Th9w/viewform" }
+        cta: { texto: "Reserva tu plaza", url: "https://kibiapp.com/app/activity-detail/tumh" }
+      },
+      {
+        fecha: "03.10",
+        titulo: "Nomade x Temperato · Run, Walk &amp; Breakfast",
+        lugar: "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Temperato+Plaza+de+las+Flores+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">Temperato</a> · Plaza de las Flores, Murcia",
+        asistentes: "",
+        resumen: "9:00 · 5 km por el centro de Murcia, corriendo o andando, y desayuno en Temperato al acabar. La entrada incluye la participación y el desayuno. 15€.",
+        fotos: "",
+        rutaStrava: "",
+        sorteos: [],
+        cta: { texto: "Reserva tu plaza", url: "https://kibiapp.com/app/activity-detail/est8" }
       }
     ],
-    proximos: ["06.09", "19.09"]   // días con glow "Próximo 🧡"
+    proximos: ["19.09", "03.10"]   // días con glow "Próximo 🧡"
   };
   </script>
   <style>
@@ -996,7 +1009,7 @@
       .cal-cell { min-height: 46px; padding: 5px; }
       .cal-ev { font-size: 8px; }
     }
-
+  
 /* === Premium upgrades === */
 html { scroll-behavior: smooth; }
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
@@ -1013,18 +1026,6 @@ html { scroll-behavior: smooth; }
   .nav-links, .modal { transform: none !important; transition: opacity .2s linear !important; }
 }
 
-
-@media (max-width:400px) {
-  #nav { padding-left:10px; padding-right:10px; gap:6px; }
-  #nav .brand-logo { width:90px; max-width:90px; }
-  #nav .nav-social { gap:4px; margin-right:0; }
-  #nav .nav-burger { flex-shrink:0; width:36px; padding:9px 8px; }
-}
-@media (max-width:360px) {
-  #nav .brand-logo { width:76px; max-width:76px; }
-  #nav .nav-social a { width:28px; min-width:28px; height:32px; }
-  #nav .language-switch { padding:0 4px; font-size:11px; }
-}
 </style>
 </head>
 <body>
@@ -1032,7 +1033,6 @@ html { scroll-behavior: smooth; }
 
   <nav class="nav" id="nav">
     <a class="brand" href="#top" aria-label="Nomade home"><img id="brand-logo" class="brand-logo" alt="Nomade" style="display:none" loading="lazy" decoding="async"><span class="mark" id="brand-mark">N</span></a>    <div class="nav-social" id="nav-social">
-      <a class="language-switch" href="?lang=en" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
       <a class="nav-ig" href="https://instagram.com/socialclub.nomade" target="_blank" rel="noopener" aria-label="Instagram Nomade"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>      <a class="nav-wa" href="https://wa.me/34659615136" target="_blank" rel="noopener" aria-label="WhatsApp Nomade"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.92-9.91zm5.79 14.16c-.25.69-1.45 1.32-1.99 1.36-.53.04-1.05.2-3.53-.74-2.97-1.12-4.86-3.93-5.01-4.11-.15-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.59-.36.79-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.37-.45.5-.15.15-.3.31-.13.6.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.3 2.33 1.45.29.14.46.12.63-.07.17-.19.71-.83.9-1.11.19-.29.38-.24.64-.14.26.09 1.66.78 1.94.92.29.14.48.21.55.33.07.11.07.66-.18 1.35z"/></svg></a>      <a class="nav-tk" id="nav-tk" href="https://www.tiktok.com/@nomade.run.social" target="_blank" rel="noopener" aria-label="TikTok Nomade"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.04-2.82h-3.3v12.5a2.59 2.59 0 0 1-2.59-2.59 2.6 2.6 0 0 1 2.95-2.57v-3.3a5.9 5.9 0 0 0-2.95-.78 5.9 5.9 0 1 0 5.9 5.9V8.94a7.4 7.4 0 0 0 4.33 2.36V8a4.3 4.3 0 0 1-4.3-2.18z"/></svg></a>    </div>
     <button class="nav-burger" id="nav-burger" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="nav-links">
@@ -1121,12 +1121,14 @@ html { scroll-behavior: smooth; }
           <span class="plabel">Espacios donde nos hemos movido</span>
           <!-- 📍 Espacios donde ha estado Nomade, con su link de Maps embebido.
                Sirve también de archivo: si se pierde un link, está aquí.
-               Los 5 llevan su link de Maps. -->
+               Los 7 llevan su link de Maps. -->
           <span><a href="https://www.google.com/maps/place/La+Mestiza/@37.6637729,-0.7360469,811m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6637687!4d-0.7334666!16s%2Fg%2F11mhhhjhsk" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Mestiza</a></span>
           <span><a href="https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Dominique</a></span>
           <span><a href="https://maps.app.goo.gl/h7acttU61MD5pVFo8" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Cangreja Km 0</a></span>
           <span><a href="https://www.google.com/maps/place/Collados+Beach/@37.780153,-0.7489934,810m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd631a9a2bb0e273:0x21a76e3dfb7ed5bf!8m2!3d37.7801488!4d-0.7464131!16s%2Fg%2F1tdxm6cs" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Collados Beach</a></span>
           <span><a href="https://maps.app.goo.gl/RttfBACuAEF9Q6M68" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Maloca</a></span>
+          <span><a href="https://maps.app.goo.gl/3egVCVmHDbKVCcNfA" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Pickles Bar</a></span>
+          <span><a href="https://maps.app.goo.gl/LLaJ9ScJNZKMtkkm7" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Cetina Hotels</a></span>
         </div>
       </div>
     </section>
@@ -1274,16 +1276,14 @@ html { scroll-behavior: smooth; }
       <strong>Nomade. Social & Run Club.</strong>
       <span>La Manga · 2026 · What's next?</span>
       <a href="#contacto">Contacto</a>
-      <a href="privacidad.html">Privacidad</a>
+      <a href='/privacidad'>Privacidad</a>
     </div>
     <div class="footer-row" style="margin-top:14px; font-size:12px; color:rgba(255,244,223,.45);">
-      <span>Tratamos tus datos solo para gestionar los eventos y avisarte de los próximos. Escríbenos y los borramos. <a href="privacidad.html" style="color:inherit;text-decoration:underline">Más info</a>.</span>
+      <span>Tratamos tus datos solo para gestionar los eventos y avisarte de los próximos. Escríbenos y los borramos. <a href='/privacidad' style='color:inherit;text-decoration:underline'>Más info</a>.</span>
     </div>
   </footer>
 
   <script>
-  NOMADE_I18N.init();
-  NOMADE_I18N.translateConfig(NOMADE);
   /* Pinta la CONFIG en la página — no tocar */
   (function () {
     const $ = id => document.getElementById(id);
@@ -1341,8 +1341,12 @@ html { scroll-behavior: smooth; }
             + '<div class="cd-box"><span id="cd-s">--</span><small>seg</small></div></div>';
         }
         h += '</div>';
+        /* 8 sep · la reserva puede ir a un form de Google o a Kibi: el aviso se ajusta a cada uno. */
         if (c.estado === 'abierta' && c.formUrl) {
-          h += '<p style="margin:12px 0 0; font-size:12px; color:rgba(33,21,15,.55);">El formulario es de Google Forms: al abrirlo, Google tratará tus datos (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">política</a>).</p>';
+          const esFormGoogle = c.formUrl.indexOf('docs.google.com/forms') >= 0;
+          h += '<p style="margin:12px 0 0; font-size:12px; color:rgba(33,21,15,.55);">' + (esFormGoogle
+            ? 'El formulario es de Google Forms: al abrirlo, Google tratará tus datos (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">política</a>).'
+            : 'La reserva se gestiona en Kibi, una plataforma externa: al abrirla, tus datos los trata Kibi.') + '</p>';
         }
         let ctaTxt, ctaHref;
         if (c.estado === 'abierta' && c.formUrl) { ctaTxt = 'Reserva tu plaza'; ctaHref = c.formUrl; }
@@ -1351,7 +1355,7 @@ html { scroll-behavior: smooth; }
         h += '<div class="hero-actions">'
           + '<a class="btn primary" style="background: var(--soil); color: var(--cream);" href="' + ctaHref + '" target="_blank" rel="noopener">' + ctaTxt + '</a>'
           + '<a class="btn secondary" style="border-color: rgba(33,21,15,.18); color: var(--soil); background: rgba(33,21,15,.06);" href="#contacto">Dudas</a></div>';
-        return NOMADE_I18N.translateHTML(h);
+        return h;
       }
 
       function contentHTML(c) { return '<div class="cromo">' + cardHTML(c) + '</div>'; }
@@ -1608,7 +1612,6 @@ html { scroll-behavior: smooth; }
         });
       }
 
-      NOMADE_I18N.translateDOM(back);
       back.classList.add('open');
     }
 
@@ -1650,7 +1653,7 @@ html { scroll-behavior: smooth; }
       calWrap.appendChild(head);
 
       const grid = document.createElement('div'); grid.className = 'cal-grid';
-      (NOMADE_I18N.en ? ['Mo','Tu','We','Th','Fr','Sa','Su'] : ['L','M','X','J','V','S','D']).forEach(d => { const w = document.createElement('div'); w.className = 'cal-wd'; w.textContent = d; grid.appendChild(w); });
+      ['L','M','X','J','V','S','D'].forEach(d => { const w = document.createElement('div'); w.className = 'cal-wd'; w.textContent = d; grid.appendChild(w); });
       const offset = (new Date(YEAR, mes - 1, 1).getDay() + 6) % 7;
       const dias = new Date(YEAR, mes, 0).getDate();
       for (let i = 0; i < offset; i++) { const e = document.createElement('div'); e.className = 'cal-cell empty'; grid.appendChild(e); }
@@ -1685,7 +1688,6 @@ html { scroll-behavior: smooth; }
         grid.appendChild(cell);
       }
       calWrap.appendChild(grid);
-      NOMADE_I18N.translateDOM(calWrap);
     }
     renderCal(mesActual);
 
