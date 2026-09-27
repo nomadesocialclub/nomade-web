@@ -121,6 +121,51 @@
           fotos: "https://drive.google.com/drive/folders/1zXj9VVl4BeN8lpkKp60PVqAodcVuz5_Z?usp=sharing" }
       ],
       pilates: [
+        {
+          "estado": "abierta",
+          "fechaTitulo": "DOMINGO 25.10",
+          "meta": "Pilates Sculpt + Taller de Cerámica",
+          "detalles": [
+            [
+              "Hora",
+              "9:00 A 13:00"
+            ],
+            [
+              "Lugar",
+              "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=MAMA+POTTERY%2C+Calle+Isidoro+de+la+Cierva%2C+13%2C+Murcia%2C+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">MAMA POTTERY</a>"
+            ],
+            [
+              "Entrada",
+              "55€"
+            ],
+            [
+              "Clase",
+              "PILATES SCULPT + MEDITACIÓN GUIADA CON BREATHWORK"
+            ],
+            [
+              "Después",
+              "TALLER DE CERÁMICA + BREAKFAST, TODAS JUNTAS 🧡"
+            ],
+            [
+              "Desayuno",
+              "Fruta, yogur con granola y bebida caliente"
+            ],
+            [
+              "Cerámica",
+              "Todo el material necesario para pintar una taza, incluido su esmaltado y horneado"
+            ],
+            [
+              "Dress code",
+              "NEGRO"
+            ],
+            [
+              "Trae",
+              "TOALLA Y BOTELLA DE AGUA"
+            ]
+          ],
+          "nota": "Una mañana para moverte, desconectar y crear.",
+          "formUrl": "https://kibiapp.com/app/activity-detail/375fec80-ca4f-4065-9180-0fd18ba51c96"
+        },
         /* 🏨 CETINA 29.08 — Pilates Sculpt Exclusive en el rooftop. Info y form de Yoli (13 ago). */
         { estado: "soldout", sello: "20 personas", fechaTitulo: "S\u00e1bado 29.08",
           meta: "Pilates Sculpt Exclusive by Nomade en el rooftop de Cetina Hotels, Cabo de Palos. La edici\u00f3n m\u00e1s especial de la temporada.",
@@ -369,9 +414,21 @@
         rutaStrava: "",
         sorteos: [],
         cta: { texto: "Reserva tu plaza", url: "https://kibiapp.com/app/activity-detail/est8" }
+      },
+      {
+        fecha: "25.10",
+        titulo: "NOMADE X MAMA POTTERY · PILATES, CERÁMICA, BREAKFAST",
+        lugarCorto: "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=MAMA+POTTERY%2C+Calle+Isidoro+de+la+Cierva%2C+13%2C+Murcia%2C+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">MAMA POTTERY</a>",
+        lugar: "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=MAMA+POTTERY%2C+Calle+Isidoro+de+la+Cierva%2C+13%2C+Murcia%2C+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">MAMA POTTERY</a>",
+        asistentes: "",
+        resumen: "9:00 a 13:00 · Pilates Sculpt + Taller de cerámica. La entrada incluye ambas actividades y el desayuno. 55€.",
+        fotos: "",
+        rutaStrava: "",
+        sorteos: [],
+        cta: {}
       }
     ],
-    proximos: ["03.10"]   // días con glow "Próximo 🧡"
+    proximos: ["03.10", "25.10"]   // días con glow "Próximo 🧡"
   };
   </script>
   <style>
@@ -1565,7 +1622,7 @@ html { scroll-behavior: smooth; }
     const back = $('modal-back');
 
     function abrir(ev) {
-      $('m-fecha').innerHTML = ev.fecha + ' · ' + ev.lugar;
+      $('m-fecha').innerHTML = ev.fecha + ' · ' + (ev.lugarCorto || ev.lugar);
       $('m-titulo').textContent = ev.titulo;
       $('m-resumen').innerHTML = ev.resumen || '';
 
