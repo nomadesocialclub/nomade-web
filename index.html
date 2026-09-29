@@ -40,16 +40,18 @@
     stats: { nomaders: "+400", asistencias: "+500", eventos: "17", mujeres: "~70%", followersIg: "+2,6K", whatsapp: "+459" },
 
     /* 🃏 TARJETAS DE EVENTO — tres barajas: base / running / pilates.
-       La PRIMERA tarjeta de cada lista es la que se ve al entrar; detrás quedan
-       las anteriores con su sello SOLD OUT, navegables con las flechas (o swipe).
-       Para publicar un evento nuevo: añade su tarjeta AL PRINCIPIO de su lista.
+       Orden visual cronológico: antiguas a la izquierda, futuras a la derecha.
+       Añadir nuevas tarjetas al final; el carrusel las ordena por fecha igualmente.
+       Sin fecha (Próximamente) quedan al extremo derecho. Para otro año, usar fechaISO.
+       Al entrar se prioriza la primera abierta; sin abiertas, la próxima anunciada.
        Campos: estado "abierta" | "proximamente" | "soldout" | "cerrada"
                ("cerrada" = evento celebrado o inscripción cerrada SIN llenarse.
                 Pinta banda "INSCRIPCIÓN CERRADA" en vez de "SOLD OUT")
                fechaTitulo · meta (subtítulo) · detalles [[etiqueta, valor], ...]
                sello (texto bajo el SOLD OUT) · fotos (link Drive) · nota
-               formUrl + fechaISO ("2026-08-08T09:00:00") solo si estado "abierta"
-               (fechaISO enciende la cuenta atrás). */
+               formUrl para reservas si estado "abierta".
+               fechaISO enciende la cuenta atrás en "abierta" o "proximamente";
+               incluir zona horaria para eventos con hora local fija. */
     tarjetas: {
       base: [
         /* 🎧 19.09 · Nomade x AURA en Todo Passa (Murcia). Abierta el 30 ago con el form de Yoli.
@@ -78,13 +80,48 @@
           fotos: "https://drive.google.com/drive/folders/147U2x_nuyymhF8P4Of5ljd5VBmRQm9Tg?usp=sharing" }
       ],
       running: [
+        {
+          "estado": "proximamente",
+          "fechaTitulo": "SÁBADO 10.10",
+          "fechaISO": "2026-10-10T09:30:00+02:00",
+          "logos": [{"nombre": "RUMM", "src": "assets/logos/rumm.svg"}, {"nombre": "Snoozy", "src": "assets/logos/snoozy.png"}],
+          "meta": "Nomade llega a Madrid<br>Social Run & After en AOURA",
+          "detalles": [
+            [
+              "Hora",
+              "9:30"
+            ],
+            [
+              "Lugar",
+              "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=AOURA%2C+C%2F+de+Ponzano%2C+4%2C+Chamber%C3%AD%2C+28010+Madrid\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">AOURA</a> · C/ de Ponzano, 4, Chamberí, 28010 Madrid"
+            ],
+            [
+              "Entrada",
+              "Running: gratuita / after: 10€"
+            ],
+            [
+              "Recorrido",
+              "5K / 8K"
+            ],
+            [
+              "Incluye",
+              "SOCIAL RUN Y, OPCIONALMENTE, DESAYUNO EN AOURA (AÇAI + CAFÉ) 🧡"
+            ],
+            [
+              "Dress code",
+              "Negro"
+            ]
+          ],
+          "nota": "Ven solo, la idea es conocer a gente nueva"
+        },
         /* 🥐 03.10 · Nomade x Temperato en Plaza de las Flores (Murcia). Copy y enlace de Kibi de Yoli, 14 sep.
            El enlace del sitio es una busqueda de Maps: cambiarlo por el corto cuando lo pasen. */
         { estado: "abierta", fechaTitulo: "Sábado 03.10",
           meta: "Nomade x Temperato · Run, Walk &amp; Breakfast. 5 km por el centro de Murcia, corriendo o andando, y desayuno en Temperato al acabar.",
-          detalles: [["Hora", "9:00"], ["Lugar", "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Temperato+Plaza+de+las+Flores+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Temperato</a> · Plaza de las Flores, Murcia"], ["Entrada", "15€"], ["Recorrido", "5K · corriendo o andando"], ["Incluye", "La participación en el run o walk y el desayuno en Temperato 🧡"]],
+          detalles: [["Hora", "9:30 am"], ["Lugar", "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Temperato+Plaza+de+las+Flores+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">Temperato</a> · Plaza de las Flores, Murcia"], ["Entrada", "15€"], ["Recorrido", "5K · corriendo o andando"], ["Incluye", "La participación en el run o walk y el desayuno en Temperato 🧡"], ["Desayuno", "Tostada a elegir / Açai Bowl + bebida (café, matcha, smoothie, infusión)"]],
           formUrl: "https://kibiapp.com/app/activity-detail/est8",
-          fechaISO: "2026-10-03T09:00:00",
+          fechaISO: "2026-10-03T09:30:00+02:00",
+          logos: [{nombre: "Salubell", src: "assets/logos/salubell.svg"}, {nombre: "Snoozy", src: "assets/logos/snoozy.png"}, {nombre: "Lares", src: "assets/logos/Lares-Logo.svg"}, {nombre: "RUMM", src: "assets/logos/rumm.svg"}],
           nota: "Se puede hacer corriendo o andando, cada una a su ritmo 🧡" },
         /* 🏃 06.09 · Nomade x NOW Running en Pickles Bar, Cabo de Palos. Abierta el 31 ago
            con el copy y el formulario de Yoli. Es el primer evento con NOW, de Cartagena. */
@@ -409,11 +446,25 @@
         titulo: "Nomade x Temperato · Run, Walk &amp; Breakfast",
         lugar: "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=Temperato+Plaza+de+las+Flores+Murcia\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;font-weight:700;text-decoration:underline\">Temperato</a> · Plaza de las Flores, Murcia",
         asistentes: "",
-        resumen: "9:00 · 5 km por el centro de Murcia, corriendo o andando, y desayuno en Temperato al acabar. La entrada incluye la participación y el desayuno. 15€.",
+        resumen: "9:30 am · 5 km por el centro de Murcia, corriendo o andando, y desayuno en Temperato al acabar. La entrada incluye la participación y el desayuno. 15€.",
         fotos: "",
         rutaStrava: "",
         sorteos: [],
         cta: { texto: "Reserva tu plaza", url: "https://kibiapp.com/app/activity-detail/est8" }
+      },
+      {
+        "fecha": "10.10",
+        "tituloCalendario": "NOMADE x AOURA (MADRID)",
+        "lugarUnaLinea": true,
+        "titulo": "NOMADE Social Run x AOURA After",
+        "lugarCorto": "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=AOURA%2C+C%2F+de+Ponzano%2C+4%2C+Chamber%C3%AD%2C+28010+Madrid\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">AOURA</a> · Madrid",
+        "lugar": "<a href=\"https://www.google.com/maps/search/?api=1&amp;query=AOURA%2C+C%2F+de+Ponzano%2C+4%2C+Chamber%C3%AD%2C+28010+Madrid\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">AOURA</a> · C/ de Ponzano, 4, Chamberí, 28010 Madrid",
+        "asistentes": "",
+        "resumen": "9:30 am · Primer Social Run en Madrid · Elige 5K / 8K · Entrada running gratuita + After en AOURA opcional (açai + café) · 10€",
+        "fotos": "",
+        "rutaStrava": "",
+        "sorteos": [],
+        "cta": {}
       },
       {
         fecha: "25.10",
@@ -428,7 +479,7 @@
         cta: {}
       }
     ],
-    proximos: ["03.10", "25.10"]   // días con glow "Próximo 🧡"
+    proximos: ["03.10", "10.10", "25.10"]   // días con glow "Próximo 🧡"
   };
   </script>
   <style>
@@ -914,6 +965,15 @@
     }
     .modal .m-resumen { color: rgba(33,21,15,.66); font-size: 15px; line-height: 1.5; margin: 8px 0 0; }
     .modal .detail-rows { margin-top: 18px; }
+    .modal:has(.location-single-line) { width: min(640px, 100%); }
+    .modal .location-single-line {
+      display: block; container-type: inline-size;
+    }
+    .modal .location-single-line > span { display: block; margin-bottom: 7px; }
+    .modal .location-single-line > strong {
+      display: block; text-align: left; white-space: nowrap;
+      letter-spacing: 0; font-size: min(12px, 2.8cqi);
+    }
     .modal .m-sorteos { margin: 14px 0 0; padding: 0; list-style: none; font-size: 13px; color: rgba(33,21,15,.7); }
     .modal .m-sorteos li { padding: 5px 0; }
     .modal .m-sorteos li.colab { color: rgba(33,21,15,.6); font-style: italic; }
@@ -1004,6 +1064,10 @@
     .benefits li::before { content: "\2713"; position: absolute; left: 0; color: var(--terra); font-weight: 900; }
 
     /* Logo navbar */
+    .event-logos { display:grid; grid-template-columns:repeat(2, minmax(0, 110px)); justify-content:center; align-items:center; gap:10px; margin:8px 0 18px; }
+    .event-logos > span { display:flex; align-items:center; justify-content:center; width:100%; height:54px; padding:10px; box-sizing:border-box; background:rgba(255,244,223,.92); border-radius:11px; }
+    .event-logos > span:only-child { grid-column:1 / -1; justify-self:center; width:110px; max-width:100%; }
+    .event-logos img { display:block; max-width:100%; max-height:32px; width:auto; height:auto; object-fit:contain; }
     .brand-logo { height: 32px; width: auto; display: block; }
 
     /* Diario · calendario */
@@ -1360,7 +1424,16 @@ html { scroll-behavior: smooth; }
        El cromo tiene tamaño fijo (manda la tarjeta más alta de todas las barajas,
        medida en vivo), gira en 3D al cambiar y hace tilt bajo el ratón. --- */
     (function () {
-      const T = NOMADE.tarjetas || {};
+      // Fecha ascendente para todas las barajas; evita depender del orden de edición.
+      function fechaOrden(c) {
+        const iso = (c.fechaISO || '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+        if (iso) return Number(iso[1] + iso[2] + iso[3]);
+        const fecha = (c.fechaTitulo || '').match(/(\d{2})\.(\d{2})/);
+        return fecha ? Number('2026' + fecha[2] + fecha[1]) : Infinity;
+      }
+      const T = Object.fromEntries(Object.entries(NOMADE.tarjetas || {}).map(
+        ([tipo, tarjetas]) => [tipo, [...tarjetas].sort((a, b) => fechaOrden(a) - fechaOrden(b))]
+      ));
       const stage = $('ev-stage'), card = $('ev-card'), prev = $('ev-prev'), next = $('ev-next'), count = $('ev-count');
       if (!card || !stage) return;
       let tipo = 'base', idx = 0, cdTimer = null, animando = false;
@@ -1372,7 +1445,7 @@ html { scroll-behavior: smooth; }
         if (!list || !list.length) return 0;
         let i = list.findIndex(c => c.estado === 'abierta');
         if (i < 0) i = list.findIndex(c => c.estado === 'proximamente');
-        return i < 0 ? 0 : i;
+        return i < 0 ? list.length - 1 : i;
       }
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -1390,12 +1463,17 @@ html { scroll-behavior: smooth; }
           h += '</div>';
         }
         if (c.nota) h += '<p class="event-fine" style="text-align:center; margin-top:14px;">' + c.nota + '</p>';
-        if (c.estado === 'abierta' && c.fechaISO) {
+        if ((c.estado === 'abierta' || c.estado === 'proximamente') && c.fechaISO) {
           h += '<div class="countdown" aria-label="Cuenta atrás para el evento">'
             + '<div class="cd-box"><span id="cd-d">--</span><small>dias</small></div>'
             + '<div class="cd-box"><span id="cd-h">--</span><small>horas</small></div>'
             + '<div class="cd-box"><span id="cd-m">--</span><small>min</small></div>'
             + '<div class="cd-box"><span id="cd-s">--</span><small>seg</small></div></div>';
+        }
+        if (c.logos && c.logos.length) {
+          h += '<div class="event-logos" aria-label="Marcas del evento">';
+          c.logos.forEach(logo => { h += '<span><img src="' + logo.src + '" alt="' + logo.nombre + '" loading="lazy" decoding="async"></span>'; });
+          h += '</div>';
         }
         h += '</div>';
         /* 8 sep · la reserva puede ir a un form de Google o a Kibi: el aviso se ajusta a cada uno. */
@@ -1439,7 +1517,7 @@ html { scroll-behavior: smooth; }
         idx = Math.max(0, Math.min(idx, list.length - 1));
         const c = list[idx];
         card.innerHTML = contentHTML(c);
-        if (c.estado === 'abierta' && c.fechaISO) startCountdown(c.fechaISO);
+        if ((c.estado === 'abierta' || c.estado === 'proximamente') && c.fechaISO) startCountdown(c.fechaISO);
         const many = list.length > 1;
         stage.classList.toggle('has-deck', many);
         if (prev) { prev.hidden = !many; prev.disabled = idx === 0; }
@@ -1536,7 +1614,7 @@ html { scroll-behavior: smooth; }
       if (prev) prev.addEventListener('click', () => { if (idx > 0) swapTo(idx - 1, null, -1); });
       if (next) next.addEventListener('click', () => { const list = T[tipo] || []; if (idx < list.length - 1) swapTo(idx + 1, null, 1); });
 
-      /* swipe en móvil: izquierda = más antiguo, derecha = más reciente */
+      /* Deslizar a la izquierda avanza a futuras; a la derecha vuelve a anteriores. */
       let x0 = null;
       card.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
       card.addEventListener('touchend', e => {
@@ -1630,7 +1708,7 @@ html { scroll-behavior: smooth; }
       [['Lugar', ev.lugar], ['Asistentes', ev.asistentes]].forEach(([k, v]) => {
         if (!v) return;
         const d = document.createElement('div');
-        d.className = 'detail-row';
+        d.className = 'detail-row' + (k === 'Lugar' && ev.lugarUnaLinea ? ' location-single-line' : '');
         d.innerHTML = '<span>' + k + '</span><strong>' + v + '</strong>';
         rows.appendChild(d);
       });
@@ -1722,7 +1800,7 @@ html { scroll-behavior: smooth; }
         if (ev) {
           cell.classList.add('has-ev');
           if (proximosSet.has(f)) cell.classList.add('next');   /* glow "Próximo 🧡" también con evento registrado */
-          cell.innerHTML += '<span class="cal-ev">' + ev.titulo.split('·')[0].trim() + '</span>';
+          cell.innerHTML += '<span class="cal-ev">' + (ev.tituloCalendario || ev.titulo.split('·')[0].trim()) + '</span>';
           cell.addEventListener('click', () => abrir(ev));
         } else if (proximosSet.has(f)) {
           cell.classList.add('has-ev', 'next');
