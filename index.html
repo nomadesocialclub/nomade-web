@@ -1048,6 +1048,18 @@
     .partners .plabel { color: rgba(255,244,223,.5); font-size: 12px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; width: 100%; }
     .partners span:not(.plabel) { color: rgba(255,244,223,.82); font-weight: 800; font-size: 17px; }
 
+    .brand-history-grid { display:grid; grid-template-columns:repeat(auto-fill, 112px); gap:10px; width:100%; }
+    .brand-history-logo { display:flex; align-items:center; justify-content:center; min-width:0; height:60px; padding:8px 10px; box-sizing:border-box; background:var(--cream); border-radius:10px; overflow:hidden; }
+    .brand-history-logo img { display:block; max-width:100%; max-height:44px; width:auto; height:auto; object-fit:contain; }
+    .brand-history-logo.brand-fisiolab { background:#0b0b0d; padding:0; }
+    .brand-history-logo.brand-fisiolab img { height:64px; max-height:none; max-width:none; flex-shrink:0; }
+    .brand-history-logo.brand-todopassa { background:#fff; padding:0; }
+    .brand-history-logo.brand-todopassa img { height:70px; max-height:none; max-width:none; flex-shrink:0; }
+    .brand-history-logo.brand-bevit { background:#e3d2bb; padding:0; }
+    .brand-history-logo.brand-bevit img { width:140px; height:auto; max-height:none; max-width:none; flex-shrink:0; }
+    .brand-history-logo.brand-collados { background:#0a4aea; padding:0; }
+    .brand-history-logo.brand-collados img { height:84px; max-height:none; max-width:none; flex-shrink:0; }
+
     /* FAQ */
     .faq { margin-top: 30px; display: grid; gap: 10px; max-width: 820px; }
     .faq details { border: 1px solid rgba(255,244,223,.14); border-radius: 18px; background: rgba(255,244,223,.05); padding: 2px 18px; }
@@ -1242,7 +1254,7 @@ html { scroll-behavior: smooth; }
           <span class="plabel">Espacios donde nos hemos movido</span>
           <!-- 📍 Espacios donde ha estado Nomade, con su link de Maps embebido.
                Sirve también de archivo: si se pierde un link, está aquí.
-               Los 7 llevan su link de Maps. -->
+               Todos llevan su link de Maps. -->
           <span><a href="https://www.google.com/maps/place/La+Mestiza/@37.6637729,-0.7360469,811m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6637687!4d-0.7334666!16s%2Fg%2F11mhhhjhsk" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Mestiza</a></span>
           <span><a href="https://maps.app.goo.gl/Ywmgd6HHgh8E8egP9" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Dominique</a></span>
           <span><a href="https://maps.app.goo.gl/h7acttU61MD5pVFo8" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">La Cangreja Km 0</a></span>
@@ -1250,6 +1262,33 @@ html { scroll-behavior: smooth; }
           <span><a href="https://maps.app.goo.gl/RttfBACuAEF9Q6M68" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Maloca</a></span>
           <span><a href="https://maps.app.goo.gl/3egVCVmHDbKVCcNfA" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Pickles Bar</a></span>
           <span><a href="https://maps.app.goo.gl/LLaJ9ScJNZKMtkkm7" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Cetina Hotels</a></span>
+          <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Todo+Passa+360+Club+Calle+Madre+Esperanza+5+Murcia" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Todo Passa 360 club</a></span>
+        </div>
+        <div class="partners brand-history">
+          <span class="plabel">Marcas que han colaborado con nosotros</span>
+          <div class="brand-history-grid">
+            <div class="brand-history-logo brand-fisiolab"><img src="assets/logos/fisiolab.jpeg" alt="Fisiolab" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/salubell.svg" alt="Salubell" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/newgarden.svg" alt="New Garden" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/Lares-Logo.svg" alt="Drink Lares" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/rumm.svg" alt="RUMM" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/queso7.webp" alt="Queso 7" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo brand-bevit"><img src="assets/logos/bevitshot.png" alt="Bevitshot" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/snoozy.png" alt="Snoozy" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/ilusion.svg" alt="Ilusión Sport" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/kefi.png" alt="Kefi" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/citypoke.svg" alt="City Poke" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/vitaminwell.webp" alt="Vitamin Well" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/huertalista.png" alt="Huertalista" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/cetina.svg" alt="Cetina Hotels" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo brand-collados"><img src="assets/logos/collados-beach.png" alt="Collados Beach" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo brand-todopassa"><img src="assets/logos/todo-passa.jpeg" alt="Todo Passa 360 club" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/maloca.png" alt="Maloca" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/la-cangreja.png" alt="La Cangreja" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/temperato.png" alt="Temperato" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/la-dominique.png" alt="La Dominique" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo"><img src="assets/logos/la-mestiza.png" alt="La Mestiza" loading="lazy" decoding="async"></div>
+          </div>
         </div>
       </div>
     </section>
