@@ -85,7 +85,7 @@
           "formUrl": "https://kibiapp.com/app/activity-detail/vg6i",
           "fechaTitulo": "SÁBADO 10.10",
           "fechaISO": "2026-10-10T09:30:00+02:00",
-          "logos": [{"nombre": "RUMM", "src": "assets/logos/rumm.svg"}],
+          "logos": [{"nombre": "RUMM", "src": "assets/logos/rumm.svg"}, {"nombre": "Vitamin Well", "src": "assets/logos/vitaminwell.webp"}],
           "meta": "Nomade llega a Madrid<br>Social Run & After en AOURA",
           "detalles": [
             [
@@ -106,7 +106,7 @@
             ],
             [
               "Incluye",
-              "SOCIAL RUN Y, OPCIONALMENTE, DESAYUNO EN AOURA (AÇAI + CAFÉ) 🧡"
+              "<i>SOCIAL RUN + DESAYUNO OPCIONAL EN AOURA</i><i>(AÇAI + CAFÉ) · SORTEOS Y SORPRESAS 🧡</i>", "includes-two-lines"
             ],
             [
               "Dress code",
@@ -935,6 +935,9 @@
     .detail-row span { color: rgba(33,21,15,.6); }
     .detail-row strong { text-align: right; }
     .detail-row strong.sold { color: var(--terra); }
+    .detail-row.includes-two-lines { display:block; container-type:inline-size; }
+    .includes-two-lines strong { display:block; margin-top:6px; font-size:clamp(9px, 3cqw, 12px); letter-spacing:0; line-height:1.5; }
+    .includes-two-lines i { display:block; font-style:normal; white-space:nowrap; }
     .event-fine { margin-top: 16px; font-size: 13px; color: rgba(33,21,15,.55); line-height: 1.45; }
 
     /* Diario del club → ver estilos .cal (calendario) más abajo */
@@ -1090,6 +1093,7 @@
     .event-logos > span { display:flex; align-items:center; justify-content:center; width:100%; height:54px; padding:10px; box-sizing:border-box; background:rgba(255,244,223,.92); border-radius:11px; }
     .event-logos > span:only-child { grid-column:1 / -1; justify-self:center; width:110px; max-width:100%; }
     .event-logos img { display:block; max-width:100%; max-height:32px; width:auto; height:auto; object-fit:contain; }
+    .event-logos img[src="assets/logos/vitaminwell.webp"] { width:90px; height:36px; max-height:36px; object-fit:cover; object-position:center; }
     .brand-logo { height: 32px; width: auto; display: block; }
 
     /* Diario · calendario */
@@ -1510,7 +1514,7 @@ html { scroll-behavior: smooth; }
         if (c.meta) h += '<p class="event-meta">' + c.meta + '</p>';
         if (c.detalles && c.detalles.length) {
           h += '<div class="detail-rows">';
-          c.detalles.forEach(d => { h += '<div class="detail-row"><span>' + d[0] + '</span><strong>' + d[1] + '</strong></div>'; });
+          c.detalles.forEach(d => { h += '<div class="detail-row' + (d[2] === 'includes-two-lines' ? ' includes-two-lines' : '') + '"><span>' + d[0] + '</span><strong>' + d[1] + '</strong></div>'; });
           h += '</div>';
         }
         if (c.nota) h += '<p class="event-fine" style="text-align:center; margin-top:14px;">' + c.nota + '</p>';
