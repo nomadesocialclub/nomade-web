@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <script>if (location.hash === "#empresas" || location.hash === "#empresas-contacto") location.replace("empresas.html" + location.hash);</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Nomade. Social & Run Club.</title>
@@ -37,7 +38,7 @@
     email: "socialclub.nomade@gmail.com",               // email de contacto
     telefono: "+34 659 61 51 36",
     whatsappYoli: "https://wa.me/34659615136",         // WhatsApp directo a Yoli (dudas / colaboraciones)
-    stats: { nomaders: "+500", asistencias: "+500", eventos: "22", mujeres: "~70%", followersIg: "+6.2K", whatsapp: "+760" },
+    stats: { asistencias: "+700", eventos: "23", mujeres: "~70%", followersIg: "+6.3K", whatsapp: "+800" },
 
     /* 🃏 TARJETAS DE EVENTO — tres barajas: base / running / pilates.
        Orden visual cronológico: antiguas a la izquierda, futuras a la derecha.
@@ -79,7 +80,7 @@
           detalles: [["Lugar", "<a href=\"https://www.google.com/maps/place/La+Mestiza/@37.6637729,-0.7360469,811m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6637687!4d-0.7334666!16s%2Fg%2F11mhhhjhsk\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Mestiza</a>"]],
           fotos: "https://drive.google.com/drive/folders/147U2x_nuyymhF8P4Of5ljd5VBmRQm9Tg?usp=sharing" },
         {
-          "estado": "abierta",
+          "estado": "cerrada",
           "fechaTitulo": "DOMINGO 08.11",
           "meta": "NOMADE x RESPIRA",
           "fechaISO": "2026-11-08T09:00:00+01:00",
@@ -175,12 +176,22 @@
             {
               "nombre": "DRNK LARES",
               "src": "assets/logos/Lares-Logo.svg"
+            },
+            {
+              "nombre": "Oriri",
+              "src": "assets/logos/oriri.jpg"
+            },
+            {
+              "nombre": "Snoozy",
+              "src": "assets/logos/snoozy.png"
             }
           ],
           "nota": "Ven con tu gente o ven por tu cuenta: aquí el plan es encontrarnos. 🧡"
         }
       ],
       running: [
+        { estado: "proximamente", fechaTitulo: "Próximamente…",
+          meta: "Pronto anunciaremos el próximo evento de running..." },
         {
           "estado": "soldout",
           "sello": "inscripciones cerradas",
@@ -259,7 +270,7 @@
           detalles: [["Hora", "21:00"], ["Lugar", "<a href=\"https://maps.app.goo.gl/h7acttU61MD5pVFo8\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;text-decoration:underline\">La Cangreja Km 0</a>"], ["Entrada", "7€ · con bebida"], ["Recorrido", "5K o 8K"], ["Dress code", "Negro"]],
           fotos: "https://drive.google.com/drive/folders/1zXj9VVl4BeN8lpkKp60PVqAodcVuz5_Z?usp=sharing" },
         {
-          "estado": "abierta",
+          "estado": "cerrada",
           "formUrl": "https://kibiapp.com/app/activity-detail/m87w",
           "fechaTitulo": "VIERNES 30.10",
           "fechaISO": "2026-10-30T19:30:00+01:00",
@@ -871,6 +882,57 @@
     }
     .scroll-line { height: 1px; width: 70px; background: rgba(255,255,255,.3); }
 
+
+    /* Empresas: una propuesta a medida y contacto directo. */
+    #empresas, #empresas-contacto { scroll-margin-top: 100px; }
+    .business-summary { padding:clamp(24px,5vw,60px); border:1px solid var(--line); border-radius:28px; background:rgba(255,244,223,.04); }
+    .business-summary .section-title { max-width:960px; font-size:clamp(32px,4.5vw,60px); line-height:1.06; text-transform:none; }
+    .business-summary .section-text { max-width:820px; }
+    .business-signoff { margin:28px 0 0; color:var(--sun); font-size:clamp(18px,2vw,23px); font-weight:700; line-height:1.5; }
+    .business-explore { margin:30px 0 16px; color:var(--cream); font-size:17px; font-weight:600; line-height:1.5; }
+    .business-options { display:grid; gap:12px; }
+    .business-option { border:1px solid var(--line); border-radius:18px; background:rgba(255,244,223,.03); overflow:hidden; }
+    .business-option summary { display:flex; align-items:center; justify-content:space-between; gap:18px; padding:22px 24px; cursor:pointer; list-style:none; }
+    .business-option summary::-webkit-details-marker { display:none; }
+    .business-option summary::marker { content:''; }
+    .business-option-label { display:block; color:var(--sun); font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px; }
+    .business-option-title { display:block; font-size:clamp(18px,2.3vw,25px); font-weight:600; line-height:1.25; }
+    .business-toggle { display:flex; align-items:center; justify-content:center; flex-shrink:0; width:34px; height:34px; border:1px solid var(--line); border-radius:50%; color:var(--sun); font-size:25px; line-height:1; }
+    .business-option[open] { border-color:rgba(217,138,61,.55); background:rgba(125,56,34,.48); color:var(--cream); box-shadow:0 12px 32px rgba(17,13,9,.22), inset 0 1px 0 rgba(255,244,223,.06); }
+    .business-option[open] .business-toggle { transform:rotate(45deg); }
+    .business-option summary:hover { background:rgba(255,244,223,.05); }
+    .business-option summary:focus-visible { outline:3px solid var(--sun); outline-offset:-4px; border-radius:18px; }
+    .business-option-body { padding:0 24px 26px; max-width:820px; color:var(--muted); font-size:17px; line-height:1.6; }
+    .business-option-body p { margin:0 0 14px; }
+    .business-option-body ul { margin:0 0 20px; padding-left:22px; }
+    .business-next { color:var(--sun); font-weight:700; text-underline-offset:4px; }
+    .business-closing { color:var(--muted); max-width:820px; line-height:1.6; font-size:17px; margin:12px 0 0; }
+    @media (max-width:600px) { .business-option summary { padding:18px 16px; gap:12px; } .business-option-body { padding:0 16px 22px; } }
+    /* Selección terracota translúcida y respuesta al pulsar. */
+    .business-option { transition:background-color .28s ease, border-color .28s ease, box-shadow .28s ease, color .2s ease; }
+    .business-toggle { transition:transform .25s ease, color .2s ease, border-color .2s ease; }
+    .business-option[open] .business-option-label,
+    .business-option[open] .business-option-body,
+    .business-option[open] .business-next,
+    .business-option[open] .business-toggle { color:var(--cream); }
+    .business-option[open] .business-toggle { border-color:rgba(255,244,223,.3); }
+    .business-option[open] summary:focus-visible { outline-color:var(--sun); }
+    .business-option[open] .business-option-body { animation:business-reveal .28s ease-out; }
+    .business-next { display:inline-block; padding:9px 13px; border:1px solid currentColor; border-radius:12px; text-decoration:none; transition:background-color .2s ease,color .2s ease,transform .15s ease; }
+    #empresas .btn { transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .15s ease; }
+    #empresas .btn:hover, #empresas .btn:focus-visible { background:rgba(125,56,34,.72); border-color:rgba(217,138,61,.65); color:var(--cream); box-shadow:0 6px 20px rgba(17,13,9,.25); }
+    #empresas .btn:active { background:rgba(88,40,26,.9); border-color:var(--sun); color:var(--cream); transform:scale(.97); box-shadow:none; }
+    #empresas .business-next:hover, #empresas .business-next:focus-visible { background:rgba(17,13,9,.4); color:var(--cream); border-color:rgba(217,138,61,.7); }
+    #empresas .business-next:active { background:var(--ink); color:var(--cream); transform:scale(.97); }
+    #empresas a:focus-visible { outline:3px solid var(--sun); outline-offset:5px; }
+    #empresas .business-option[open] a:focus-visible { outline-color:var(--cream); }
+    @keyframes business-reveal { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    @media (prefers-reduced-motion:reduce) {
+      #empresas .business-option, #empresas .business-toggle, #empresas .business-next, #empresas .btn { transition:none; }
+      #empresas .business-option-body { animation:none; }
+      #empresas .btn:active, #empresas .business-next:active { transform:none; }
+    }
+
     .section { position: relative; padding: 78px 0; }
     .container { width: min(calc(100% - 36px), var(--max)); margin: 0 auto; }
     .section-kicker {
@@ -1248,9 +1310,15 @@
     .brand-history-grid { display:grid; grid-template-columns:repeat(auto-fill, 112px); gap:10px; width:100%; }
     .brand-history-logo { display:flex; align-items:center; justify-content:center; min-width:0; height:60px; padding:8px 10px; box-sizing:border-box; background:var(--cream); border-radius:10px; overflow:hidden; }
     .brand-history-logo img { display:block; max-width:100%; max-height:44px; width:auto; height:auto; object-fit:contain; }
+    .brand-history-logo.brand-casaverde { background:var(--cream); padding:4px; }
+    .brand-history-logo.brand-casaverde img { max-height:52px; }
+    .brand-history-logo.brand-oriri img { mix-blend-mode:multiply; }
+    .brand-history-logo.brand-respira { background:var(--cream); }
+    .brand-history-logo.brand-shangrila { background:var(--cream); padding:0; }
+    .brand-history-logo.brand-shangrila img { height:74px; max-height:none; max-width:100%; flex-shrink:0; }
     .brand-history-logo.brand-fisiolab { background:#0b0b0d; padding:0; }
     .brand-history-logo.brand-fisiolab img { height:64px; max-height:none; max-width:none; flex-shrink:0; }
-    .brand-history-logo.brand-todopassa { background:#fff; padding:0; }
+    .brand-history-logo.brand-todopassa { background:var(--cream); padding:0; }
     .brand-history-logo.brand-todopassa img { height:70px; max-height:none; max-width:none; flex-shrink:0; }
     .brand-history-logo.brand-bevit { background:#e3d2bb; padding:0; }
     .brand-history-logo.brand-bevit img { width:140px; height:auto; max-height:none; max-width:none; flex-shrink:0; }
@@ -1263,7 +1331,7 @@
     .brand-history-logo img[src="assets/logos/snoozy.png"] { transform:translate(-2.12px, 1.95px); }
     .brand-history-logo img[src="assets/logos/ilusion.svg"] { transform:translate(-0.77px, -0.31px); }
     .brand-history-logo img[src="assets/logos/kefi.png"] { transform:translate(-0.75px, -0.25px); }
-    .brand-history-logo img[src="assets/logos/todo-passa.jpeg"] { transform:translate(-1.33px, -0.47px); }
+    .brand-history-logo img[src="assets/logos/todo-passa-transparente.png"] { transform:translate(-1.33px, -0.47px); }
     .brand-history-logo img[src="assets/logos/maloca.png"] { transform:translate(-0.18px, 0.95px); }
     .brand-history-logo img[src="assets/logos/temperato.png"] { transform:translate(-0.17px, -1.55px); }
 
@@ -1321,7 +1389,7 @@
     @media (max-width: 1080px) {
       .about-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 860px) {
+    @media (max-width: 1100px) {
       .nav-burger { display: flex; }
       .nav-links {
         position: absolute; top: calc(100% + 10px); left: 0; right: 0;
@@ -1337,6 +1405,8 @@
       }
       .nav.open .nav-links { opacity: 1; transform: none; pointer-events: auto; }
       .nav-links a { padding: 13px 14px; border-radius: 12px; }
+    }
+    @media (max-width: 860px) {
       .hero-inner { padding-bottom: 34px; }
       .split, .event, .wa-block, .about-grid { grid-template-columns: 1fr; }
       .image-card, .quote-panel { min-height: 430px; border-radius: 28px; }
@@ -1384,6 +1454,7 @@ html { scroll-behavior: smooth; }
       <a href="#diario">Calendario Nomade</a>
       <a href="#whatsapp">Comunidad</a>
       <a href="#faq">FAQ</a>
+      <a href="empresas.html">Empresas</a>
       <a href="#contacto">Colabora</a>
       <a href="#contacto">Contacto</a>
     </div>
@@ -1452,7 +1523,6 @@ html { scroll-behavior: smooth; }
         <div class="section-kicker">Comunidad &amp; partners</div>
         <h2 class="section-title">Esto ya está pasando.</h2>
         <div class="stats-row" id="stats-wrap">
-          <div class="stat" id="stat-nomaders" style="display:none"><div class="stat-num"></div><div class="stat-label">nomaders</div></div>
           <div class="stat" id="stat-asistencias" style="display:none"><div class="stat-num"></div><div class="stat-label">asistencias</div></div>
           <div class="stat" id="stat-eventos" style="display:none"><div class="stat-num"></div><div class="stat-label">eventos</div></div>
           <div class="stat" id="stat-mujeres" style="display:none"><div class="stat-num"></div><div class="stat-label">mujeres</div></div>
@@ -1475,6 +1545,7 @@ html { scroll-behavior: smooth; }
           <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Temperato+Plaza+de+las+Flores+Murcia" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Temperato · Plaza de las Flores, Murcia</a></span>
           <span><a href="https://www.google.com/maps/search/?api=1&amp;query=AOURA%2C+C%2F+de+Ponzano%2C+4%2C+Chamber%C3%AD%2C+28010+Madrid" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">AOURA</a></span>
           <span><a href="https://www.google.com/maps/search/?api=1&amp;query=MAMA+POTTERY%2C+Calle+Isidoro+de+la+Cierva%2C+13%2C+Murcia%2C+Murcia" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Mama Pottery</a></span>
+          <span><a href="https://maps.app.goo.gl/tYvUwjFkbMDm1imi9" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Shangrila</a></span>
         </div>
         <div class="partners brand-history">
           <span class="plabel">Marcas que han colaborado con nosotros</span>
@@ -1494,17 +1565,22 @@ html { scroll-behavior: smooth; }
             <div class="brand-history-logo"><img src="assets/logos/huertalista.png" alt="Huertalista" loading="lazy" decoding="async"></div>
             <div class="brand-history-logo"><img src="assets/logos/cetina.svg" alt="Cetina Hotels" loading="lazy" decoding="async"></div>
             <div class="brand-history-logo brand-collados"><img src="assets/logos/collados-beach.png" alt="Collados Beach" loading="lazy" decoding="async"></div>
-            <div class="brand-history-logo brand-todopassa"><img src="assets/logos/todo-passa.jpeg" alt="Todo Passa 360 club" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo brand-todopassa"><img src="assets/logos/todo-passa-transparente.png" alt="Todo Passa 360 club" loading="lazy" decoding="async"></div>
             <div class="brand-history-logo"><img src="assets/logos/maloca.png" alt="Maloca" loading="lazy" decoding="async"></div>
             <div class="brand-history-logo"><img src="assets/logos/la-cangreja.png" alt="La Cangreja" loading="lazy" decoding="async"></div>
             <div class="brand-history-logo"><img src="assets/logos/temperato.png" alt="Temperato" loading="lazy" decoding="async"></div>
             <div class="brand-history-logo"><img src="assets/logos/la-dominique.png" alt="La Dominique" loading="lazy" decoding="async"></div>
             <div class="brand-history-logo"><img src="assets/logos/la-mestiza.png" alt="La Mestiza" loading="lazy" decoding="async"></div>
             <div class="brand-history-logo"><img src="assets/logos/aura.png" alt="Aura" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo brand-shangrila"><img src="assets/logos/shangrila-transparente.png" alt="Shangrila" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo brand-respira"><img src="assets/logos/respira.png" alt="RESPIRA" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo brand-casaverde"><img src="assets/logos/la-casa-verde-transparente.png" alt="La Casa Verde" loading="lazy" decoding="async"></div>
+            <div class="brand-history-logo brand-oriri"><img src="assets/logos/oriri.jpg" alt="Oriri · Cosmética rural" loading="lazy" decoding="async"></div>
           </div>
         </div>
       </div>
     </section>
+
 
     <section id="whatsapp" class="section">
       <div class="container">
@@ -1650,6 +1726,7 @@ html { scroll-behavior: smooth; }
       <strong>Nomade. Social & Run Club.</strong>
       <span>La Manga · 2026 · What's next?</span>
       <a href="#contacto">Contacto</a>
+      <a href='empresas.html'>Empresas</a>
       <a href='/privacidad'>Privacidad</a>
     </div>
     <div class="footer-row" style="margin-top:14px; font-size:12px; color:rgba(255,244,223,.45);">
@@ -1941,7 +2018,7 @@ html { scroll-behavior: smooth; }
     }
     (function () {
       const s = NOMADE.stats || {};
-      const items = [['stat-nomaders', s.nomaders], ['stat-asistencias', s.asistencias], ['stat-eventos', s.eventos], ['stat-mujeres', s.mujeres], ['stat-ig', s.followersIg], ['stat-wa', s.whatsapp]];
+      const items = [['stat-asistencias', s.asistencias], ['stat-eventos', s.eventos], ['stat-mujeres', s.mujeres], ['stat-ig', s.followersIg], ['stat-wa', s.whatsapp]];
       let any = false;
       items.forEach(([id, v]) => {
         const el = $(id);
@@ -2028,8 +2105,7 @@ html { scroll-behavior: smooth; }
        es el miércoles 12 por el eclipse. */
     const SIN_SEMANAL = new Set(['11.08']);
     const HOY = new Date(); HOY.setHours(0, 0, 0, 0);
-    let mesActual = (NOMADE.proximos && NOMADE.proximos.length) ? mesDe(NOMADE.proximos[0])
-      : (NOMADE.eventos.length ? mesDe(NOMADE.eventos[NOMADE.eventos.length - 1].fecha) : 7);
+    let mesActual = 11; // Noviembre: mes inicial solicitado para el calendario.
 
     function renderCal(mes) {
       calWrap.innerHTML = '';
